@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  <form action="login" method="get">
+		<!-- 表单控件编写在此，允许被提交 -->
+
+		<p>
+			用户名称：
+			<input type="text" name="uname" placeholder="请输入用户名">
+		</p>
+		<p>
+			用户密码：
+			<input type="password" name="upwd" placeholder="请输入密码">
+		</p>
+
+		<p>
+			用户性别：
+			<input type="radio" name="gender" value="M" checked>帅哥
+			<input type="radio" name="gender" value="F">美女
+		</p>
+		<p>
+			用户爱好：
+			<input type="checkbox" name="hobby" value="0">吃
+			<input type="checkbox" name="hobby" value="1">喝
+			<input type="checkbox" name="hobby" value="2">玩
+			<input type="checkbox" name="hobby" value="3">乐
+		</p>
+		<p>
+			<input type="hidden" name="uid" value="0561213">
+		</p>
+		<p>
+			用户头像：
+			<input type="file" name="uimg">
+		</p>
+		<p>
+			自我介绍：
+			<textarea name="intro" cols="50" rows="5"></textarea>
+		</p>
+		<p>
+			用户学历：
+			<select name="education">
+				<option value="1">小学</option>
+				<option value="2">初中</option>
+			</select>
+		</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<p>
+			<input type="submit" value="起飞">
+			<input type="reset" value="降落">
+			<input type="button" value="普通按钮">
+		</p>
+
+
+	</form>
+
+	<!-- 表单控件编写与此，能显示，但不能被提交 -->
+ </body>
+</html>
