@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>作者信息:</h1>
+    <h3>姓名：{{author.names}}</h3>
+    <h3>邮箱：{{author.email}}</h3>
+    <h1>出版的所有书籍:</h1>
+    {% for book in books %}
+        <h3>书名：{{book.title}}</h3>
+        <h3>出版时间：{{book.publicate_date}}</h3>
+    {% endfor %}
+
+    <h1>书籍信息：</h1>
+    <h3>书名：{{book.title}}</h3>
+    <h3>出版时间：{{book.publicate_date}}</h3>
+    <h1>所有作者：</h1>
+    {% for au in authors %}
+        <h3>姓名：{{au.names}}</h3>
+        <h3>邮箱：{{au.email}}</h3>
+    {% endfor %}
+</body>
+</html>

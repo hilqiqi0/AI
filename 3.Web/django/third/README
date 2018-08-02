@@ -1,0 +1,191 @@
+./manage.py
+    #!/usr/bin/env python3
+
+./Models.py
+    通过数据库自动导出Models
+        ./manage.py inspectdb > Models.py
+
+third
+    __init__.py
+        import pymysql
+        pymysql.install_as_MySQLdb()
+
+    settings.py
+        INSTALLED_APPS = [
+        'index',
+        ]
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.mysql',
+                'NAME': 'webdb',
+                'USER': 'root',
+                'PASSWORD' : '123456',
+                'HOST' : 'localhost',
+                'PORT' : '3306',
+            }
+        }
+        LANGUAGE_CODE = 'zh-Hans'
+        TIME_ZONE = 'Asia/Shanghai'
+
+    urls.py
+        from django.conf.urls import url,include
+        urlpatterns = [
+            url(r'^',include('index.urls')),
+        ]
+
+index
+    models.py
+        class AuthorManager(models.Manager):
+            def auCount(self):
+                return self.all().count()
+            def lt_age(self,age):
+                return self.filter(age__lt=age)
+        class BookManager(models.Manager):
+            def titleContains(self,keywords):
+                return self.filter(title__contains=keywords)
+        class Publisher(models.Model):
+            name=models.CharField(max_length=30)
+            def __str__(self):
+                return self.name
+            class Meta:
+                db_table='publisher'
+                verbose_name='出版社'
+                verbose_name_plural=verbose_name
+        class Book(models.Model):
+            objects = BookManager()
+            title = models.CharField(max_length=50,verbose_name='书名')
+            publicate_date = models.DateField(verbose_name='出版时间')
+            publisher = models.ForeignKey(Publisher,verbose_name='出版社',null=True)
+            def __str__(self):
+                return self.title
+            class Meta:
+                db_table='book'
+                verbose_name='书籍'
+                verbose_name_plural=verbose_name
+                ordering=['-publicate_date']
+        class Author(models.Model):
+            objects = AuthorManager()
+            names = models.CharField(max_length=30)
+            age = models.IntegerField()
+            email = models.EmailField(null=True)
+            isActive = models.BooleanField(default=True)
+            book = models.ManyToManyField(Book)
+            publisher = models.ManyToManyField(Publisher)
+            def __str__(self):
+                return self.names
+            class Meta:
+                db_table='author'
+                verbose_name='作者'
+                verbose_name_plural = verbose_name
+                ordering = ['-age','id']
+        class Wife(models.Model):
+            names = models.CharField(max_length=30)
+            age = models.IntegerField()
+            author = models.OneToOneField(Author,null=True)
+            def __str__(self):
+                return self.names
+            class Meta:
+                db_table='wife'
+                verbose_name='夫人'
+                verbose_name_plural = verbose_name
+
+    uls.py
+        urlpatterns = [
+            url(r'^01_add/$',add_views),
+            url(r'^02_query/$',query_views),
+            url(r'^03_aulist/$',aulist_views),
+            url(r'^04_delete/(\d+)/$',delete_views,name='del'),
+            url(r'^05_upshow/(\d+)/$',upshow_views,name='up'),
+            url(r'^06_upage/$',upage_views),
+            url(r'^07_doQ/$',doQ_views),
+            url(r'^08_raw/$',raw_views),
+            url(r'^09_oto/$',oto_views),
+            url(r'^10_otm/$',otm_views),
+            url(r'^11_mtm/$',mtm_views),
+            url(r'^12_obj/$',obj_views),
+            url(r'^13_update/$',update_views,name='update'),
+        ]
+    views.py
+        def add_views(request):
+            ...
+            return HttpResponse('Add3 OK')
+        def query_views(request):
+            ...
+            return HttpResponse('Query OK')
+        def aulist_views(request):
+            auList = Author.objects.filter(isActive=True)
+            return render(request,'01_aulist.html',locals())
+        def delete_views(request,id):
+            ...
+            # 转发
+            # return aulist_views(request)
+            # 重定向
+            return HttpResponseRedirect('/03_aulist/')
+        def upshow_views(request,id):
+            au = Author.objects.get(id=id)
+            return render(request,'02_update.html',locals())
+        def upage_views(request):
+            Author.objects.all().update(age=F('age')+10)
+            return HttpResponseRedirect('/03_aulist/')
+        def doQ_views(request):
+            auList = Author.objects.filter(Q(id=6)|Q(age__gte=70),isActive=True)
+            return render(request,'01_aulist.html',locals())
+        def raw_views(request):
+            ...
+            return HttpResponse('Execute raw success!')
+        def oto_views(request):
+            ...
+            return render(request,'03_oto.html',locals())
+        def otm_views(request):
+            ...
+            return render(request,'04_otm.html',locals())
+        def mtm_views(request):
+            ...
+            return render(request,'05_mtm.html',locals())
+        def mtmExer_views(request):
+            ...
+            return HttpResposne('Query OK')
+        def obj_views(request):
+            ...
+            return HttpResponse('Execute OK')
+        def update_views(request):
+            ...
+            return HttpResponseRedirect('/03_aulist/')
+
+index主要用于前十三章：
+    主要关注文件：
+        models.py
+            自定义查询对象(models.Manager)
+            模型类(models.Model)
+            后台管理
+            映射关系
+        urls.py
+            路由配置：建立地址映射
+        view.py
+            业务处理：CRUD(增、查、更、删)，重点在于查找的匹配
+            转发和重定向
+            ORM操作：对象关系映射(Object Relational Mapping,简称ORM)操作
+        templates
+            页面显示（HTML文件），映射关系显示
+
+关键命令：
+    创建应用：
+        ./manage.py startapp news
+
+    数据库同步：
+        ./manage.py makemigrations
+        ./manage.py migrate
+
+    启动（三选一）：
+        python3 manage.py runserver
+        ./manage.py runserver
+        ./manage.py runserver 0.0.0.0:8000
+
+    补充：
+        数据的版本切换：
+            1、./manage.py migrate
+                执行所有应用中最新版本的数据库中间文件
+            2、./manage.py migrate 应用名称 版本号
+                执行 应用中 版本号 对应的中间文件
+        通过数据库自动导出Models：
+            ./manage.py inspectdb > 文件名.py

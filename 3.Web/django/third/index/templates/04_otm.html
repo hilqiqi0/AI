@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Book的信息：</h1>
+    <h3>书名：{{book.title}}</h3>
+    <h3>出版时间：{{book.publicate_date}}</h3>
+
+    <h1>Publisher的信息：</h1>
+    <h3>出版社:{{publisher.name}}</h3>
+    <h3>地址：{{publisher.address}}</h3>
+    <h3>网址：
+        <a href="{{publisher.website}}">{{publisher.website}}</a>
+    </h3>
+    {% for book in books %}
+        <h3>书名:{{book.title}}</h3>
+        <h3>出版时间:{{book.publicate_date}}</h3>
+    {% endfor %}
+</body>
+</html>

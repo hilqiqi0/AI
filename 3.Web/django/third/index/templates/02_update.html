@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form action="{% url 'update' %}" method="post">
+        {% csrf_token %}
+        <p>
+            姓名:
+            <input type="text" name="names" value="{{au.names}}">
+            <!-- 隐藏域：需要提交给后台但不想给用户看的数据 -->
+            <input type="hidden" name="id" value='{{au.id}}'>
+        </p>
+        <p>
+            年龄:
+            <input type="number" name="age" value="{{au.age}}">
+        </p>
+        <p>
+            邮箱:
+            <input type="email" name="email" value="{{au.email}}">
+        </p>
+        <p>
+            <input type="submit" value="修改">
+        </p>
+    </form>
+</body>
+</html>

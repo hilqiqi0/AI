@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>姓名</td>
+                <td>年龄</td>
+                <td>邮箱</td>
+                <td>操作</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for au in auList %}
+                <tr>
+                    <td>{{au.id}}</td>
+                    <td>{{au.names}}</td>
+                    <td>{{au.age}}</td>
+                    <td>{{au.email}}</td>
+                    <td>
+                        <!-- <a href="/04_delete/{{au.id}}">删除</a> -->
+                        <a href="{% url 'del' au.id %}">删除</a>
+                        <a href="{% url 'up' au.id%}">修改</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
