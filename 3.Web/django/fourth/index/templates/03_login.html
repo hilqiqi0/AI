@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="/static/js/jquery-1.11.3.js"></script>
+    <script src="{% static 'js/login.js'%}"></script>
+</head>
+<body>
+    <h3>
+        <a href="/04_query/?id=52&name=zsf">手动拼参数到04_query</a>
+    </h3>
+    <form id='frmLogin' action="/03_get" method="get">
+        <p>
+            用户名：<input type="text" name="uname">
+        </p>
+        <p>
+            密码：<input type="password" name="upwd">
+        </p>
+        <p>
+            <input type="submit" value="提交">
+        </p>
+    </form>
+</body>
+</html>

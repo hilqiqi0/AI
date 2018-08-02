@@ -1,0 +1,154 @@
+./manage.py
+    #!/usr/bin/env python3
+
+fourth
+    __init__.py
+        import pymysql
+        pymysql.install_as_MySQLdb()
+
+    settings.py
+        INSTALLED_APPS = [
+            'index',
+        ]
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.mysql',
+                'NAME': 'fourth',
+                'USER':'root',
+                'PASSWORD':'123456',
+                'HOST':'localhost',
+                'PORT':'3306',
+            }
+        }
+        STATICFILES_DIRS = (BASE_DIR,'static')
+        SESSION_COOKIE_AGE=600
+        SESSION_EXPIRE_AT_BROWSER_CLOSE=True
+
+    urls.py
+        urlpatterns = [
+            url(r'^admin/', admin.site.urls),
+            url(r'^',include('index.urls')),
+        ]
+
+index
+    static
+        静态文件
+    templates
+        模板
+    forms.py
+        TOPIC_CHOICE=(('level1','好评'),('level2','中评'),('level3','差评'),)
+        class RemarkForm(forms.Form):
+            subject = forms.CharField(label='标题',initial='初始数据')
+            email = forms.EmailField(label='邮箱')
+            message = forms.CharField(label='内容',widget=forms.Textarea)
+            topic = forms.ChoiceField(label='评价',choices=TOPIC_CHOICE)
+            isSave = forms.BooleanField(label='是否保存')
+        class RegisterForm(forms.Form):
+            uname=forms.CharField(label='用户名称',widget=forms.TextInput(
+                attrs={'placeholder':'请输入用户名','class':'form-control',}))
+            upwd=forms.CharField(label='用户密码',widget=forms.PasswordInput(
+                attrs={'placeholder':'请输入密码','class':'form-control',}))
+            uemail=forms.CharField(label='电子邮箱',widget=forms.EmailInput)
+            uage=forms.CharField(label='用户年龄',widget=forms.NumberInput)
+        class LoginForm(forms.ModelForm):
+            class Meta:
+                model = Users
+                fields = ['uname','upwd']
+                labels = {'uname':'用户名称','upwd':'用户密码',}
+                widgets = {'uname':forms.TextInput(attrs={'placeholder':'请输入用户名','class':'form-control',}),
+                            'upwd':forms.PasswordInput(attrs={'placeholder':'请输入密码','class':'form-control',})}
+
+    models.py
+        class Users(models.Model):
+            uname = models.CharField(max_length=30)
+            upwd = models.CharField(max_length=30)
+            uemail = models.EmailField()
+            uage = models.IntegerField()
+
+    urls.py
+        urlpatterns = [
+            url(r'^01_request/$',request_views),
+            url(r'^02_login/$',login_views),
+            url(r'^03_get/',get_views),
+            url(r'^04_query/',query_views),
+            url(r'^05_form/$',form_views),
+            url(r'^06_register/$',register_views),
+            url(r'^07_modelForm/$',modelForm_views),
+            url(r'^08_addCookie/$',addCookie_views),
+            url(r'^09_getCookie/$',getCookie_views),
+            url(r'^10_setSession/$',setSession_views),
+            url(r'^11_getSession/$',getSession_views),
+        ]
+
+    views.py
+        def request_views(request):
+            ...
+            return render(request,'01_request.html',locals())
+        def login_views(request):
+            if request.method == 'GET':
+                return render(request,'02_login.html')
+            else:
+                uname = request.POST['uname']
+                upwd = request.POST['upwd']
+                return HttpResponse('用户名:'+uname+',密码:'+upwd)
+        def get_views(request):
+            uname = request.GET.get('uname','')
+            upwd = request.GET.get('upwd','')
+            if uname and upwd:
+                return HttpResponse('用户名:'+uname+",密码:"+upwd)
+            else:
+                return render(request,'03_login.html')
+        def query_views(request):
+            id = request.GET.get('id','')
+            name = request.GET.get('name','')
+            return HttpResponse('id:'+id+',name:'+name)
+        def form_views(request):
+            if request.method == 'GET':
+                form = RemarkForm()
+                return render(request,'04_form.html',locals())
+            else:
+                form = RemarkForm(request.POST)
+                if form.is_valid():
+                    cd = form.cleaned_data
+                    return HttpResponse(cd['subject']+','+cd['email'])
+        def register_views(request):
+            if request.method == 'GET':
+                form = RegisterForm()
+                return render(request,'05_register.html',locals())
+            else:
+                form = RegisterForm(request.POST)
+                if form.is_valid():
+                    cd = form.cleaned_data
+                    users = Users(**cd)
+                    users.save()
+                    return HttpResponse('Register OK')
+        def modelForm_views(request):
+            if request.method == 'GET':
+                form = LoginForm()
+                return render(request,'06_login.html',locals())
+        def addCookie_views(request):
+            resp = HttpResponseRedirect('/03_get/')
+            resp.set_cookie('uname3','zhaomin',60*60*24*366)
+            return resp
+        def getCookie_views(request):
+            cookies=request.COOKIES
+            print(cookies)
+            return HttpResponse('Get Cookies OK')
+        def setSession_views(request):
+            uname = 'sanfeng.zhang'
+            uemail = 'sf.zh@163.com'
+            request.session['uname']=uname
+            request.session['uemail']=uemail
+            return HttpResponse('Add Session Success!')
+        def getSession_views(request):
+            uname = request.session.get('uname')
+            uemail = request.session.get('uemail')
+            return HttpResponse('uname:'+uname+',uemail:'+uemail)
+
+index主要用于前十七章：主要是表单（form模型）、cookies和session
+
+关键命令：
+    启动（三选一）：
+    python3 manage.py runserver
+    ./manage.py runserver
+    ./manage.py runserver 0.0.0.0:8000

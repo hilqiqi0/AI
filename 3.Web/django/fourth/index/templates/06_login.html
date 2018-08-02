@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/07_modelForm/" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <p>
+            <input type="submit" value="登录">
+        </p>
+    </form>
+</body>
+</html>

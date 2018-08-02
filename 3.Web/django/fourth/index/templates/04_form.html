@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <form>
+        {% for field in form %}
+            <p>
+                {{field.label}}:{{field}}
+            </p>
+        {% endfor %}
+        <p>
+            <input type="submit" value="提交">
+        </p>
+    </form> -->
+
+    <form action="/05_form/" method="post">
+        {% csrf_token %}
+       <ul>
+        {{form.as_ul}}
+       </ul>
+       <p><input type="submit" value="提交"></p>
+    </form>
+</body>
+</html>
