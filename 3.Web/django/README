@@ -1,0 +1,41 @@
+
+first
+    对应于前三章：
+        url和views对应关系
+
+second
+    对应于前五章
+        应用和模板（templates）
+
+third
+    对应于前十三章：
+        模型（model）、数据库
+
+fourth
+    对应于前十七章：
+        表单（form模型）、cookies和session
+
+fruitday
+    综合案例
+
+关键命令：
+    创建应用：
+        ./manage.py startapp news
+    数据库同步：
+        ./manage.py makemigrations
+        ./manage.py migrate
+    启动（三选一）：
+        python3 manage.py runserver
+        ./manage.py runserver
+        ./manage.py runserver 0.0.0.0:8000
+    补充：
+        数据的版本切换：
+            1、./manage.py migrate
+                执行所有应用中最新版本的数据库中间文件
+            2、./manage.py migrate 应用名称 版本号
+                执行 应用中 版本号 对应的中间文件
+        通过数据库自动导出Models：
+            ./manage.py inspectdb > 文件名.py
+
+
+
