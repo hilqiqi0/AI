@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+	<style>
+		#test{
+			width:200px;
+			height:400px;
+			background:red;
+			border:2px solid #000;
+		}
+	</style>
+	<script src="jquery-1.11.3.js"></script>
+	<script>
+		$(function(){
+			//1、为btnHide绑定事件
+			$("#btnHide").click(function(){
+				$("#test").hide(5000);
+			});
+			//2、为btnShow绑定事件
+			$("#btnShow").click(function(){
+				$("#test").show(5000);
+			});
+
+			$("#btnUp").click(function(){
+				$("#test").slideUp(5000);
+			});
+
+			$("#btnDown").click(function(){
+				$("#test").slideDown(5000);
+			});
+
+			$("#btnOut").click(function(){
+				$("#test").fadeOut(5000);
+			});
+
+			$("#btnIn").click(function(){
+				$("#test").fadeIn(5000);
+			});
+		});
+	</script>
+ </head>
+ <body>
+	<button id="btnHide">基本隐藏</button>
+	<button id="btnShow">基本显示</button>
+	<button id="btnUp">滑动式隐藏</button>
+	<button id="btnDown">滑动式显示</button>
+	<button id="btnOut">淡出式隐藏</button>
+	<button id="btnIn">淡入式显示</button>
+  <div id="test">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias rem quo nesciunt itaque optio fuga aperiam molestias ipsa rerum velit id doloremque. Totam officia ea consectetur pariatur repudiandae ipsa distinctio.</div>
+ </body>
+</html>
