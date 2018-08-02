@@ -1,0 +1,32 @@
+./manage.py
+    #!/usr/bin/env python3
+
+first
+    settings.py
+        LANGUAGE_CODE = 'zh-Hans'
+        TIME_ZONE = 'Asia/Shanghai'
+
+    urls.py
+        urlpatterns = [
+            url(r'^run/$',run_views),
+            url(r'^run/(\d{2})/$',run1_views),
+            url(r'^run/(\d{4})/(\d{2})/$',run2_views),
+            url(r'^show/$',show_views,{'name':'laoshe','age':'89'})
+        ]
+
+    views.py
+        def run_views(request):
+            return HttpResponse('<h1>这是我的第一个DJANGO程序</h1>')
+        def run1_views(request,num):
+            return HttpResponse("传递的参数是:"+num)
+        def run2_views(request,num1,num2):
+            return HttpResponse("参数１:"+num1+",参数２:"+num2)
+        def show_views(request,name,age):
+            return HttpResponse("参数１:"+name+",参数２:"+age)
+
+对应于前三章
+关键命令：
+    启动（三选一）：
+    python3 manage.py runserver
+    ./manage.py runserver
+    ./manage.py runserver 0.0.0.0:8000
