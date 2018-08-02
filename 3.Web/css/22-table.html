@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>表格属性</title>
+	<style>
+		#tbl{
+			border:1px solid #000;
+			/*边框合并*/
+			/* border-collapse:collapse; */
+			/*边框边距*/
+			border-spacing:5px 10px;
+		}
+
+		/*#tbl>tbody>tr>td{ 正确子代选择器写法 }*/
+
+		#tbl td{
+			border:1px solid #000;
+		}
+	</style>
+ </head>
+ <body>
+  <table id="tbl">
+		<tr>
+			<td>Python</td>
+			<td>Java</td>
+			<td>C#</td>
+			<td>C++</td>
+		</tr>
+		<tr>
+			<td>Python</td>
+			<td>Java</td>
+			<td>C#</td>
+			<td>C++</td>
+		</tr>
+		<tr>
+			<td>Python</td>
+			<td>Java</td>
+			<td>C#</td>
+			<td>C++</td>
+		</tr>
+	</table>
+ </body>
+</html>

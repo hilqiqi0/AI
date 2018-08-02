@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>后/子代</title>
+	<style>
+		#wang span{
+			color:red;
+			font-size:24px;
+		}
+
+		#wang>span{
+			font-weight:bold;
+			font-style:italic;
+		}
+
+		/* #wang>p>span{ background-color:yellow;} */
+		/* #wang p span{background-color:yellow;} */
+		#wang>p span{background-color:green;}
+	</style>
+ </head>
+ <body>
+  <div id="wang">
+		<p>
+			王宝强
+			<span>王小宝</span>
+			<span>王小强</span>
+		</p>
+		<span>王思葱</span>
+	</div>
+	<span>
+		这是wang之外的span元素
+	</span>
+ </body>
+</html>

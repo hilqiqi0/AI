@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>转换</title>
+	<style>
+		#d1,#d2{
+			width:200px;
+			height:200px;
+			border:1px solid #000;
+			/*绝对定位*/
+			position:absolute;
+			top:200px;
+			left:400px;
+		}
+		#d1{
+			background:#999;
+		}
+		#d2{
+			background:#f00;
+			opacity:0.5;
+			/*转换-位移*/
+			/* transform:translatey(50px); */
+			/*转换-缩放*/
+			/* transform:scaleX(-2); */
+			/*转换-旋转*/
+			/* transform-origin:left top; */
+			transform:translatex(50px) rotate(45deg);
+		}
+	</style>
+ </head>
+ <body>
+  <div id="d1">参考元素</div>
+	<div id="d2">转换元素</div>
+ </body>
+</html>

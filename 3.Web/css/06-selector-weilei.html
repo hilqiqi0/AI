@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>伪类</title>
+	<style>
+		/*修改页面中所有a元素的四个状态*/
+		/*1、匹配未被访问的超链接的状态*/
+		/*a:link{
+			color:red;
+			text-decoration:none;
+		}*/
+
+		/*2、匹配超链接被访问后的状态*/
+		/*a:visited{
+			color:orange;
+		}*/
+
+		/*3、当鼠标悬停在超链接上的时候*/
+		/*a:hover{
+			color:green;
+			text-decoration:underline;
+		}*/
+
+		/*4、当超链接被激活的时候*/
+		/*a:active{
+			color:pink;
+		}*/
+
+
+		a{
+			color:black;
+			text-decoration:none;
+		}
+
+		a:hover{
+			color:red;
+		}
+
+
+		#uname{
+			font-style:italic;/*斜体*/
+			color:gray;
+		}
+		/*当#uname被激活的时候，将文本变为正体字(非斜体)*/
+		#uname:active{
+			font-style:normal;
+		}
+
+		/*当#uname获取焦点的时候，将文本变为绿色*/
+		#uname:focus{
+			color:green;
+		}
+	</style>
+ </head>
+ <body>
+  <a href="http://www.baidu.com">百度</a>
+	<a href="http://www.csdn.net">CSDN</a>
+	<p>
+		姓名：<input type="text" id="uname" value="我叫张三丰">
+	</p>
+ </body>
+</html>

@@ -1,0 +1,72 @@
+body,p,h1,h2,h3,h4,h5,h6,ul,ol{
+	margin:0;
+}
+body{
+	font-size:12px;
+}
+img{
+	vertical-align:bottom;
+}
+
+#container{
+	width:990px;
+	margin:0 auto;
+}
+
+div.item>p.title{
+	/*上边框，上外边距，上内边距，下外边距，行高*/
+	border-top:1px solid #ccc;
+	margin-top:25px;
+	padding-top:15px;
+	margin-bottom:10px;
+	line-height:42px;
+}
+
+div.item>p.title>a{
+	/*取消下划线，文本颜色，右浮动*/
+	text-decoration:none;
+	color:#333;
+	float:right;
+}
+div.item>p.title>a:hover{
+	text-decoration:underline;
+}
+/*内容项*/
+div.list>div{
+	/*宽度：190，左浮动，右外边距*/
+	width:190px;
+	float:left;
+	margin-right:10px;
+	margin-bottom:10px;
+}
+div.list>div.no-margin{
+	margin-right:0;
+}
+div.list>div>p img{
+	width:190px;
+}
+div.list div.content>a.cart{
+	float:right;
+	margin-top:3px;
+}
+div.list div.content>p{
+	color:#555;
+	margin:5px 0;
+}
+div.list div.content>div{
+	color:#999;
+}
+
+/*为图片增加放大效果*/
+div.list>div>p img{
+	/*声明过渡*/
+	transition:all .3s;
+}
+div.list>div>p img:hover{
+	/*激发放大的行为*/
+	transform:scale(1.1);
+}
+div.list>div>p{
+	/*溢出隐藏*/
+	overflow:hidden;
+}

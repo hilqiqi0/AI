@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>浮动定位</title>
+	<style>
+		#main{
+			width:990px;
+			margin:0px auto;
+		}
+		#main>div{
+			/*宽度，高度，背景色，浮动，外边距*/
+			width:190px;
+			height:200px;
+			background:red;
+			margin-bottom:10px;
+			float:left;
+			margin-right:10px;
+		}
+		#main>div.no-margin{
+			margin-right:0px;
+		}
+	</style>
+ </head>
+ <body>
+  <div id="main">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div class="no-margin">5</div>
+		<div>6</div>
+		<div>7</div>
+		<div>8</div>
+		<div>9</div>
+		<div class="no-margin">0</div>
+	</div>
+ </body>
+</html>

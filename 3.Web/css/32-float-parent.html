@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>浮动元素对父元素高度的影响</title>
+	<style>
+		#d1{
+			border:2px solid #000;
+		}
+		.c1,.c2,.c3{
+			width:200px;
+			height:200px;
+		}
+		.c1{background:red;float:left;}
+		.c2{background:green;float:left;}
+		.c3{background:blue;float:left;}
+		.c4{
+			clear:both;
+		}
+	</style>
+ </head>
+ <body>
+  <div id="d1">
+		<div class="c1"></div>
+		<div class="c2"></div>
+		<div class="c3"></div>
+		<div class="c4"></div>
+	</div>
+	<div id="d2">这是id为d2的div</div>	
+ </body>
+</html>

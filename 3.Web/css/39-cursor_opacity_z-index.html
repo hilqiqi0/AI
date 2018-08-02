@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>鼠标悬停：透明度：过渡</title>
+		<style>
+			div{
+				width:100px;
+				height:200px;
+				position:absolute;
+			}
+			#d1{
+				background:red;
+				opacity:0.8;
+			}
+			#d2{
+				background:green;
+				top:50px;
+				left:40px;
+				opacity:0.3;
+			}
+			#d3{
+				background:blue;
+				top:100px;
+				left:80px;
+				opacity:0.5;
+			}
+			#d1:hover,#d2:hover,#d3:hover{
+				z-index:1;
+				opacity:1;
+				cursor:wait;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="d1"></div>
+		<div id="d2"></div>
+		<div id="d3"></div>
+	</body>
+</html>

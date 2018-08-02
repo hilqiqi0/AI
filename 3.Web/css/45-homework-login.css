@@ -1,0 +1,121 @@
+body,p,h2{
+	margin:0px;
+}
+#container{
+	width:990px;
+	margin:0 auto;
+}
+#container h2{
+	/*取消文本加粗，颜色，下边框，下内边距，下外边距*/
+	font-weight:normal;
+	color:#999;
+	border-bottom:1px solid #ccc;
+	padding-bottom:20px;
+	margin-bottom:20px;
+}
+#container>p{
+	float:left;
+}
+#login{
+	float:right;
+	margin-top:70px;
+	margin-right:40px;
+}
+
+#login div.form-line>p{
+	/*左浮动，文字大小：16px，文本颜色，宽度，文本右对齐*/
+	float:left;
+	font-size:16px;
+	color:#999;
+	width:64px;/*每个文字16px，按4个文字设置*/
+	text-align:right;
+	/*有外边距，行高，高度*/
+	margin-right:30px;
+	line-height:40px;
+	height:40px;
+}
+#login div.form-line>div{
+	float:left;
+	width:300px;
+}
+#login .form-control{
+	/*宽度，高度，边框，取消轮廓，左右内边距，box-sizing*/
+	width:300px;
+	height:40px;
+	border:1px solid #ccc;
+	outline:none;
+	padding:0px 12px;
+	box-sizing:border-box;
+	/*文字大小，文本颜色*/
+	font-size:16px;
+	color:#555;
+}
+#login div.form-line{
+	margin-top:20px;
+	height:40px;
+}
+
+#login p.forget{
+	float:right;
+}
+#login p.forget a{
+	color:#999;
+}
+
+#isSaved{
+	width:18px;
+	height:18px;
+	vertical-align:middle;
+}
+
+#login .goReg{
+	/*145*38*/
+	/*右浮动，宽度，高度，边框，背景色，box-sizing，边框倒角，文字大小，文字颜色，取消下划线，水平居中对齐，行高*/
+	float:right;
+	width:145px;
+	height:38px;
+	border:1px solid #64a131;
+	background:#F5FFED;
+	box-sizing:border-box;
+	border-radius:5px;
+	font-size:18px;
+	color:#7BAE55;
+	text-decoration:none;
+	text-align:center;
+	line-height:38px;
+}
+#login .btnLogin{
+	/*宽度，高度，背景色，边框倒角，取消边框，文字大小，文字颜色*/
+	width:145px;
+	height:38px;
+	background:#64a131;
+	border-radius:5px;
+	border:none;
+	font-size:18px;
+	color:#fff;
+}
+
+/*绝对定位练习*/
+#container>p{
+	/*相对定位：配合 会员注册 实现绝对定位*/
+	position:relative;
+}
+#container>p>a{
+	/*绝对定位，位置偏移，宽度，高度，边框，边框倒角，文字大小，文字颜色，取消下划线，水平居中对齐，行高*/
+	position:absolute;
+	left:173px;
+	bottom:20px;
+	width:153px;
+	height:48px;
+	box-sizing:border-box;
+	border:1px solid #64a131;
+	border-radius:5px;
+	font-size:18px;
+	color:#64a131;
+	text-decoration:none;
+	text-align:center;
+	line-height:48px;
+}
+
+
+

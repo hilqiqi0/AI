@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+	<style>
+		#uname,#upwd{
+			width:296px;
+			height:34px;
+		}
+
+		#isSaved{
+			width:18px;
+			height:18px;
+		}
+
+		#btnLogin{
+			width:143px;
+			height:38px;
+			background-color:#64a131;
+		}
+	</style>
+ </head>
+ <body>
+  <form action="login" method="post">
+		<table>
+			<tr>
+				<td>手机号</td>
+				<td>
+					<input type="text" name="uname" id="uname">
+				</td>
+			</tr>
+			<tr>
+				<td align="right">密码</td>
+				<td>
+					<input type="password" name="upwd" id="upwd" placeholder="请输入6-20位号码字符">
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type="checkbox" name="isSaved" id="isSaved">记住密码
+					<a href="#">忘记密码</a>
+					<a href="#">快捷登录</a>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type="submit" value="登录" id="btnLogin">
+					<a href="#">注册会员</a>
+				</td>
+			</tr>
+		</table>
+	</form>
+ </body>
+</html>

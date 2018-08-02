@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>堆叠（relative/absolute/fixed）</title>
+	<style>
+		#d1,#d2,#d3{
+			width:200px;
+			height:300px;
+			position:absolute;
+			top:0px;
+			left:0px;
+		}
+		#d1{
+			background:red;
+		}
+		#d2{
+			background:green;
+			top:40px;
+			left:40px;
+		}
+		#d3{
+			background:blue;
+			top:80px;
+			left:80px;
+		}
+
+		#d1:hover,#d2:hover,#d3:hover{
+			z-index:100;
+		}
+	</style>
+ </head>
+ <body>
+  <div id="d1"></div>
+	<div id="d2"></div>
+	<div id="d3"></div>
+ </body>
+</html>

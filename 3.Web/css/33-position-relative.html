@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>相对定位</title>
+	<style>
+		#list li{
+			width:100px;
+			height:30px;
+			background:red;
+			float:left;
+			margin-right:10px;
+		}
+		#list li:hover{
+			/* 1、相对定位 */
+			/* position:relative;
+			left:-10px;
+			top:-10px; */
+
+			/*2、使用外边距*/
+			margin-left:-10px;
+			margin-top:-10px;
+		}
+	</style>
+ </head>
+ <body>
+  <ul id="list" type="none">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+ </body>
+</html>

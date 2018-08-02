@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>过渡效果</title>
+	<style>
+		#d1{
+			width:200px;
+			height:200px;
+			background:red;
+			/*在此处编写过渡效果*/
+			/*1、指定过渡属性*/
+			transition-property:all;
+			/*2、指定过渡时长*/
+			transition-duration:5s;
+			/*3、指定速度时间曲线函数*/
+			transition-timing-function:linear;
+			/*4、指定过渡延迟*/
+			/* transition-delay:5s; */
+		}
+		#d1:hover{
+			background:blue;
+			width:400px;
+		}
+	</style>
+ </head>
+ <body>
+  <div id="d1"></div>
+ </body>
+</html>
