@@ -1,0 +1,10 @@
+{% extends '06_parent.html' %}
+{% load static %}
+
+{% block content1 %}
+    <h2>这是在子模板中被修改掉的内容</h2>
+{% endblock %}
+
+{% block content2 %}
+    <img src="{% static 'img/huiyuan.jpg' %}">
+{% endblock %}

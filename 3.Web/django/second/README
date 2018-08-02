@@ -1,0 +1,128 @@
+./manage.py
+    #!/usr/bin/env python3
+
+second
+    settings.py
+        INSTALLED_APPS = [
+        'news',
+        'index',
+        'sport',
+        'music',
+        ]
+        LANGUAGE_CODE = 'zh-Hans'
+        TIME_ZONE = 'Asia/Shanghai'
+        STATICFILES_DIRS=(BASE_DIR,'static')
+
+    urls.py
+        from django.conf.urls import url,include
+        urlpatterns = [
+            url(r'^news/',include('news.urls')),
+            url(r'^sport/',include('sport.urls')),
+            url(r'^',include('index.urls')),
+        ]
+
+index
+    uls.py
+        from .views import *
+        urlpatterns = [
+            url(r'^$',index_views),
+            url(r'^login/$',login_views),
+        ]
+    views.py
+        def index_views(request):
+            return HttpResponse('这是index应用中的index视图')
+        def login_views(request):
+            return HttpResponse('这是index应用中的login视图')
+
+news
+    static
+        静态文件
+    templates
+        模板（html文件）:模板的语法：变量、标记、过滤器
+    urls.py
+        urlpatterns = [
+            url(r'^$',index_views),
+            url(r'^01_template/$',template_views),
+            url(r'^02_render/$',render_views),
+            url(r'^03_variable/$',var1_views),
+            url(r'^04_variable/$',var2_views),
+            url(r'^05_exer/$',exer1_views),
+            url(r'^06_tag/$',tag_views),
+            url(r'^07_static/$',static_views),
+            url(r'^08_parent/$',parent_views),
+            url(r'^09_child/$',child_views,name='child'),
+            url(r'^10_name/$',name_views),
+            url(r'^11_arg/(\d{4})/(\d{2})/$',arg_views,name='arg')
+        ]
+    views.py
+        def index_views(request):
+            return HttpResponse('这是news应用中的index视图')
+        def template_views(request):
+            t = loader.get_template("01_template.html")
+            html = t.render()
+            return HttpResponse(html)
+        def render_views(request):
+            return render(request,'01_template.html')
+        def var1_views(request):
+            l = ['老舍','莫言','朱自清']
+            t = ('冰心','矛盾','张海伦')
+            d = {'A':'ANDROID','B':'BEYOND','C':'COUNTRY'}
+            dic = {
+                'num':1001,
+                'str':"Hello World",
+                'list':l,
+                'tup':t,
+                'dic':d,
+                'fun':fun(15,18),
+                'A':A(),
+            }
+            t=loader.get_template("02_var.html")
+            html = t.render(dic)
+            return HttpResponse(html)
+        def var2_views(request):
+            l = ['老舍','莫言','朱自清']
+            t = ('冰心','矛盾','张海伦')
+            d = {'A':'ANDROID','B':'BEYOND','C':'COUNTRY'}
+            dic = {
+                'num':1001,
+                'str':"Hello World",
+                'list':l,
+                'tup':t,
+                'dic':d,
+                'fun':fun(15,18),
+                'A':A(),
+            }
+            return render(request,'02_var.html',dic)
+        def exer1_views(request):
+            book = "背影"
+            author = "朱自清"
+            publication = "北京大学出版社"
+            publiDate = "2015-10-15"
+            return render(request,'03_exer.html',locals())
+        def tag_views(request):
+            l = ["朱自清","老舍","冰心","鲁迅"]
+            return render(request,'04_tag.html',locals())
+        def static_views(request):
+            return render(request,'05_static.html')
+        def parent_views(request):
+            return render(request,'06_parent.html')
+        def child_views(request):
+            return render(request,'07_child.html')
+        def name_views(request):
+            return render(request,'08_name.html')
+        def arg_views(request,num1,num2):
+            return HttpResponse("参数１:"+num1+",参数２:"+num2)
+
+
+
+index对应于前四章
+news对应于前五章
+关键命令：
+    创建应用：
+        ./manage.py startapp news
+
+    启动（三选一）：
+        python3 manage.py runserver
+        ./manage.py runserver
+        ./manage.py runserver 0.0.0.0:8000
+

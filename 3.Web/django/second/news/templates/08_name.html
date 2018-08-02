@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p>正常编写地址</p>
+    <a href="/news/09_child/">09＿child</a>
+    <p>使用别名</p>
+    <a href="{% url 'child' %}">09_child</a>
+    <p>正常编写地址:11_arg/四位数字/两位数字</p>
+    <a href="/news/11_arg/2018/06/">11_arg</a>
+    <p>使用别名</p>
+    <a href="{% url 'arg' '2017' '08' %}">11_arg</a>
+
+</body>
+</html>
