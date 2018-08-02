@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  <script>
+		function findMax(){
+			var arr = [38,21,16,759,8128,3725,-68,77];
+			var max = arr[0];
+			//从第2个元素开始，依次与max进行比较，谁比max大，就把谁赋值给max
+			for(var i=1;i<arr.length;i++){
+				if(arr[i] > max){
+					max = arr[i];
+				}
+			}
+			console.log("该数组中的最大值为:"+max);
+		}
+
+		function arrSort(){
+			var arr = [78,156,45];
+			console.log("原始数组值:"+arr);
+			//1、比较第一个与第二个数字，如果第一个数字比第二个数字大，则交换位置
+			if(arr[0] > arr[1]){
+				arr[0] ^= arr[1];
+				arr[1] ^= arr[0];
+				arr[0] ^= arr[1];
+			}
+			console.log("第一次比较:"+arr);
+			//2、比较第二个数与第三个数字，如果第二个数字比第三个数字大，则交换位置
+			if(arr[1]>arr[2]){
+				arr[1] ^= arr[2];
+				arr[2] ^= arr[1];
+				arr[1] ^= arr[2];
+			}
+			console.log("第二次比较:"+arr);
+			//3、比较第一个与第二个数字，如果第一个数字比第二个数字大，则交换位置
+			if(arr[0] > arr[1]){
+				arr[0] ^= arr[1];
+				arr[1] ^= arr[0];
+				arr[0] ^= arr[1];
+			}
+			console.log("第三次比较:"+arr);
+			
+		}
+
+		function findIndex(){
+			var arr = [56,7,-2,89,125,321];
+			console.log("数组值为:"+arr);
+			//index用于保存找到的数组的下标，默认为-1，不表示任何下标
+			var index = -1;
+			var input = prompt("请输入一个数字:");
+			for(var i=0;i<arr.length;i++){
+				if(input == arr[i]){
+					index = i;
+					break;
+				}
+			}
+			//判断index 的值是否为-1，如果依然是-1的话则说明没找到。否则index的值就是要查找的数据的下标
+			if(index == -1){
+				console.log("您输入的数据不存在！");
+			}else{
+				console.log(input+"的下标为:"+index);
+			}
+		}
+	</script>
+	<button onclick="findMax()">查找最大值</button>
+	<button onclick="arrSort()">排序</button>
+	<button onclick="findIndex()">查找下标</button>
+ </body>
+</html>

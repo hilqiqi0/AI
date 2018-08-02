@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+	<style>
+		.color{
+			color:orange;
+			font-size:24px;
+		}
+	</style>
+ </head>
+ <body>
+  <div id="main">这是id为main的元素</div>
+	<button onclick="bindColor()">绑定color选择器</button>
+	<button onclick="changeColor()">改变颜色</button>
+	<script src="common.js"></script>
+	<script>
+		function bindColor(){
+			var main = $("main");
+			main.className = "color";
+		}
+
+		function changeColor(){
+			$("main").style.color="red";
+			$("main").style.fontSize="48px";
+		}
+	</script>
+ </body>
+</html>

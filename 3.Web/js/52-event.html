@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+	<style>
+		#d1,#d2{
+			width:400px;
+			height:400px;
+			border:2px solid #000;
+		}
+	</style>
+ </head>
+ <body>
+  <div id="d1"></div>
+	<div id="d2" onclick="d2Click()"></div>
+	<script src="common.js"></script>
+	<script>
+		var d1 = $("d1");
+		//动态的为 d1 绑定 click 事件
+		d1.onclick = function(){
+			//alert("您点击了d1");
+			//this表示的就是d1
+			console.log(this);
+			this.innerHTML = "太神奇了!!!";
+		}
+		//动态的为 d1 绑定 mouseout 事件
+		d1.onmouseout = function(){
+			console.log("您移出了d1元素");
+		}
+
+		function d2Click(){
+			//console.log("您点击了d2");
+			console.log(this);
+		}
+
+	</script>
+ </body>
+</html>

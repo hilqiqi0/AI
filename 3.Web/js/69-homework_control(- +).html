@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+	<style>
+		button{
+			width:40px;
+			height:40px;
+			border-radius:3px;
+			font-size:24px;
+			border:none;
+			vertical-align:middle;
+		}	
+		input{
+			width:80px;
+			height:40px;
+			border:1px solid #000;
+			box-sizing:border-box;
+			text-align:center;
+			font-size:24px;
+			vertical-align:middle;
+		}
+	</style>
+ </head>
+ <body>
+	<p>
+		<button onclick="btnOperation(this)">-</button>
+		<input type="text" id="txtNum" value="1">
+		<button onclick="btnOperation(this)">+</button>
+	</p>
+	<p>
+		<button onclick="btnOperation(this)">-</button>
+		<input type="text" id="txtNum" value="1">
+		<button onclick="btnOperation(this)">+</button>
+	</p>
+	<p>
+		<button onclick="btnOperation(this)">-</button>
+		<input type="text" id="txtNum" value="1">
+		<button onclick="btnOperation(this)">+</button>
+	</p>
+	<p>
+		<button onclick="btnOperation(this)">-</button>
+		<input type="text" id="txtNum" value="1">
+		<button onclick="btnOperation(this)">+</button>
+	</p>
+	<p>
+		<button onclick="btnOperation(this)">-</button>
+		<input type="text" id="txtNum" value="1">
+		<button onclick="btnOperation(this)">+</button>
+	</p>
+	<script src="common.js"></script>
+	<script>
+		/**
+		 * 实现数量修改的函数
+		 * 参数btn:表示用户点击的控件本身
+		 */
+		function btnOperation(btn){
+			if(btn.innerText == '+'){
+				//1、获取文本框
+				var txtNum = btn.previousElementSibling;
+				//2、将值+1再赋值给文本框
+				txtNum.value = ++txtNum.value;
+			}else{
+				var txtNum = btn.nextElementSibling;
+				if(txtNum.value > 1){
+					--txtNum.value;
+				}
+			}
+		}
+
+		function btnOper(op){
+			//1、获取文本框的值
+			var value = Number($("txtNum").value);
+			//2、根据op的运算符决定操作
+			if(op == "+"){
+			 value ++;
+			}else{
+				if(value > 1)
+					value --;
+			}
+			//3、将值赋值给文本框
+			$("txtNum").value = value;
+		}
+
+		function btnAdd(){
+			//1、获取 txtNum 的值
+			var value = Number($("txtNum").value);
+			//2、将 值+1
+			value += 1;
+			//3、将值赋值给txtNum
+			$("txtNum").value = value;
+		}
+
+		function btnMinus(){
+			//1、获取txtNum的值
+			var value = Number($("txtNum").value);
+			//2、判断如果值>1的话，则将值-1
+			if(value > 1){
+				value-=1;
+			}
+			//3、再将值赋值给txtNum
+			$("txtNum").value = value;
+		}
+	</script>
+ </body>
+</html>

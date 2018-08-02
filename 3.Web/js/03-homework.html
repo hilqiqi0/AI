@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  <script>
+		function changeValue(value){
+			if(value < 10){
+				value = "0"+value;
+			}
+			return value;
+		}	
+		function showTime(){
+			var now = new Date();
+			var year = now.getFullYear();
+			var month = changeValue(now.getMonth()+1);
+			var date = changeValue(now.getDate());
+			var hour = changeValue(now.getHours());
+			var minute = changeValue(now.getMinutes());
+			var second = changeValue(now.getSeconds());
+			var day = now.getDay();
+			switch(day){
+				case 0:
+					day = "日";
+					break;
+				case 1:
+					day = "一";
+					break;
+				case 2:
+					day = "二";
+					break;
+				case 3:
+					day = "三";
+					break;
+				case 4:
+					day = "四";
+					break;
+				case 5:
+					day = "五";
+					break;
+				case 6:
+					day = "六";
+					break;
+			}
+
+			/*使用数组匹配星期*/
+			/*var days = ["日","一","二","三","四","五","六"];
+			day = days[day];*/
+			var msg = year+"年"+month+"月"+date+"日 "+hour+"时"+minute+"分"+second+"秒 星期"+day;
+			console.log(msg);
+		}
+	</script>
+	<button onclick="showTime()">显示日期</button>
+ </body>
+</html>

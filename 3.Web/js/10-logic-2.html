@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>逻辑</title>
+ </head>
+ <body>
+  <script>
+		var input = window.prompt("输入一个字符:");
+		//判断是否为数字
+		var isNum = input >= 0 && input <= 9;
+		console.log(input+"是数字吗?"+isNum);
+		//判断是否为中文 \u4e00 ~ \u9fa5
+		//input>="一" && input<="龥"
+		var isCHN = input >= "\u4e00" && input <= "\u9fa5";
+		console.log(input+"是中文吗?"+isCHN);
+		//判断是否为英文
+		//判断是否为大写英文
+		var isCAPS=input>="A"&&input<="Z";
+		//判断是否为小写英文
+		var isSML=input>='a'&&input<='z';
+		//判断是否为英文
+		var isENG = isCAPS || isSML;
+		console.log(input+"是英文吗?"+isENG);
+	</script>
+
+	<script>
+		var input = window.prompt("输入一个字符:");
+		var isNum = input >= 0 && input <= 9;
+		console.log(input+"是数字吗?"+isNum);
+		var isCHN = input >= "\u4e00" && input <= "\u9fa5";
+		console.log(input+"是中文吗?"+isCHN);
+		var isCAPS=input>="A"&&input<="Z";
+		var isSML=input>='a'&&input<='z';
+		var isENG = isCAPS || isSML;
+		console.log(input+"是英文吗?"+isENG);
+	</script>
+ </body>
+</html>

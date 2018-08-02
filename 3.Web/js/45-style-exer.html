@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  用户名：<input type="text" id="uname">
+	<button onclick="validateName()">验证</button>
+	<div id="uname-show"></div>
+	<script src="common.js"></script>
+	<script>
+		function validateName(){
+			var uname = $("uname").value;
+			if(uname.length>=6 && uname.length<=18){
+				$("uname-show").innerHTML="通过";
+				$("uname-show").style.color="green";
+			}else{
+				$("uname-show").innerHTML="用户名称不符合规范";
+				$("uname-show").style.color="red";
+			}
+		}
+	</script>
+ </body>
+</html>

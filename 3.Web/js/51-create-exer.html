@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  <p>
+		<input type="text" id="gname" placeholder="商品名称">
+		<input type="text" id="gprice" placeholder="商品价格">
+		<input type="text" id="gcount" placeholder="购买数量">
+		<button onclick="btnAdd()">增加</button>
+	</p>
+	<table border="1" width="600px">
+		<thead>
+			<tr>
+				<td>商品名称</td>
+				<td>商品价格</td>
+				<td>购买数量</td>
+				<td>操作</td>
+			</tr>
+		</thead>
+		<tbody id="body"></tbody>
+	</table>
+	<script src="common.js"></script>
+	<script>
+		function btnAdd(){
+			//1、获取三个文本框的值
+			var gname = $("gname").value;
+			var gprice = $("gprice").value;
+			var gcount = $("gcount").value;
+			//2、创建四个td并将三个值赋值给td
+			var tdName = document.createElement("td");
+			tdName.innerHTML = gname;
+			var tdPrice=document.createElement("td");
+			tdPrice.innerHTML = gprice;
+			var tdCount=document.createElement("td");
+			tdCount.innerHTML = gcount;
+			var tdOper = document.createElement("td");
+			var btnUpdate=document.createElement("button");
+			var btnDelete=document.createElement("button");
+			btnUpdate.innerHTML="修改";
+			btnDelete.innerHTML="删除";
+			//将两个按钮追加到tdOper中
+			tdOper.appendChild(btnUpdate);
+			tdOper.appendChild(btnDelete);
+			//3、创建一个tr，并将四个td追加到tr中
+			var tr = document.createElement("tr");
+			tr.appendChild(tdName);
+			tr.appendChild(tdPrice);
+			tr.appendChild(tdCount);
+			tr.appendChild(tdOper);
+			
+			//4、将tr追加到tbody(#body)中
+			$("body").appendChild(tr);
+		}
+	</script>
+ </body>
+</html>

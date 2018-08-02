@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>过滤</title>
+ </head>
+ <body>
+  <p>床前明月光</p>
+	<p>疑是地上霜</p>
+	<p>举头望明月</p>
+	<p>低头思故乡</p>
+	<p>百日依山尽</p>
+	<p>黄河入海流</p>
+	<p>欲穷千里目</p>
+	<p>更上一层楼</p>
+	<button onclick="btnChange()">隔行变色</button>
+	<button onclick="btnHide()">隐藏</button>
+	<script src="jquery-1.11.3.js"></script>
+	<script>
+		function btnChange(){
+			$("p:odd").css("background","red");
+			$("p:even").css("background","yellow");
+		}
+
+		function btnHide(){
+			$("p:gt(3)").css("display","none");
+		}
+	</script>
+ </body>
+</html>

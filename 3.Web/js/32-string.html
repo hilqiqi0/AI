@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  <script>
+		function validateName(){
+			var uname=prompt("请输入用户名(6-18位):");
+			if(uname.length>=6&&uname.length<=18){
+				alert("通过验证");
+			}else{
+				alert("用户名称不符合规范!");
+			}
+		}
+		
+		/**
+		 * 生成随机验证码
+		 * 参数 len ：生成的位数
+		 */
+		function generalCode(len){
+			//1、声明一个数组包含若干字符
+			var code = ['A','B','C','D','E','h','i','j','k','l',0,1,2,3,4,5,6,7,8,9];
+			//2、生成len位随机验证码
+			var vCode = "";
+			for(var i=0;i<len;i++){
+				var rIndex = parseInt(Math.random() * code.length);
+				vCode += code[rIndex];
+			}
+			return vCode;
+		}
+
+		function validateCode(){
+			//调用 generalCode() 函数获取随机验证码
+			var vCode = generalCode(6);
+
+			//3、通过prompt将vCode展示给用户
+			var input = prompt("请输入以下验证码:"+vCode);
+			if(input.toUpperCase() == vCode.toUpperCase()){
+				alert("验证通过");
+			}else{
+				alert("验证失败");
+			}
+		}
+
+
+		function testCharCodeAt(){
+			var str = "Hello World";
+			var s = str.charAt(3);
+			console.log("下标为3的字符:"+s);
+
+			var r = str.charCodeAt(3);
+			r = r.toString(16);
+			var show = "\u006c";
+			console.log("下标为3的字符的Unicode码:"+r);
+			console.log(show);
+		}
+
+		function validateEmail(){
+			var email = prompt("请输入您的邮箱:");
+			// email 中必须包含 @ 符号
+			var atIndex = email.indexOf("@");
+			// email 中必须包含 . 符号 ，最后一个 . 必须在 @ 之后
+			var dotIndex = email.lastIndexOf(".");
+			if(atIndex != "-1" && dotIndex > atIndex){
+				alert("您输入的Email是正确的!");
+			}else{
+				alert("您的Email有误!");
+			}
+		}
+
+		function testSubstring(){
+			var email = prompt("请输入您的Email:");
+			//截取email中的用户名：从第一个字符开始，到@(不包含)为止
+			var uname = email.substring(0,email.indexOf("@"));
+			console.log("用户名:"+uname);
+			//截取email中的服务商名称：从@后的一个字符开始，一直截取到字符串的尾部
+			var sname = email.substring(email.indexOf("@")+1);
+			console.log("服务商:"+sname);
+		}
+
+		function getBirth(){
+			var idCard = "220102199712252216";
+			var year = idCard.substring(6,10);
+			var month = idCard.substring(10,12);
+			var day = idCard.substring(12,14);
+			console.log(year+"年"+month+"月"+day+"日");
+		}
+
+		function calCart(){
+			var info = "1045_5&10221_8&73569_6";
+			var cartArr = info.split("&");
+			console.log("共购买了"+cartArr.length+"类商品");
+			//循环遍历后，继续拆分
+			for(var i=0;i<cartArr.length;i++){
+				var goods = cartArr[i].split("_");
+				console.log("编号:"+goods[0]);
+				console.log("数量:"+goods[1]);
+			}
+		}
+		
+		/**
+		 * 将所有的 "垃圾" ， 替换成 "**"
+		 */
+		function replaceMsg(){
+			var msg = "收垃圾，倒垃圾，你个垃圾！！！";
+			//声明一个正则表达式：全局匹配 垃圾
+			var reg = /垃圾/g;
+			/*msg = msg.replace(reg,"**");
+			console.log(msg);*/
+
+			var r = msg.match(reg);
+			console.log("共出现"+r.length+"次垃圾");
+		}
+
+		function stringReg(){
+			var msg = "Microsoft is a big company,microsoft's color is red and has MICROSOFT logo like microsoft";
+			var reg = /microsoft/gi;
+			//查询msg中共出现多少处的microsoft
+			var arr = msg.match(reg);
+			//将msg中所有的microsoft替换成微软
+			msg=msg.replace(reg,"微软");
+			console.log("替换后的字符串："+msg);
+			console.log("共出现了"+arr.length+"次的microsoft");
+		}
+	</script>
+
+	<button onclick="validateName()">验证用户名</button>
+	<button onclick="validateCode()">验证码</button>
+	<button onclick="testCharCodeAt()">获取字符</button>
+	<button onclick="validateEmail()">验证Email</button>
+	<button onclick="testSubstring()">截取字符串</button>
+	<button onclick="getBirth()">截取生日</button>
+	<button onclick='calCart()'>购物车</button>
+	<button onclick="replaceMsg()">替换字符串</button>
+	<button onclick="stringReg()">测试string的正则表达式</button>
+ </body>
+</html>

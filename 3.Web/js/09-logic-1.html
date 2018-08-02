@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>逻辑</title>
+ </head>
+ <body>
+  <script>
+		var year = window.prompt("请输入年份:");
+		//能被4整除但不能被100整除或者能被400整除
+		var r=year%4==0&&year%100!=0||year%400==0;
+		console.log(year+"年是闰年吗?"+r);
+	</script>
+ </body>
+</html>

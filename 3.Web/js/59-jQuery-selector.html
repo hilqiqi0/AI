@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  <div id="main">
+		<p>这是普通元素p</p>
+		<p id="p1">这是id为p1的元素</p>
+		<p>这是普通元素p</p>
+		<p>这是普通元素p</p>
+		<p>这是普通元素p</p>
+		<p>这是普通元素p</p>
+	</div>
+	<button onclick="btnNB()">相邻兄弟选择器</button>
+	<script src="jQuery-1.11.3.js"></script>
+	<script>
+		function btnNB(){
+			//相邻兄弟选择器
+			$("#p1+p").css("background","yellow");
+			//通用兄弟选择器
+			$("#p1~p").css("color","red");
+		}
+	</script>
+ </body>
+</html>

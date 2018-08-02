@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  <script>
+		var msg = "1、查询请按1\n2、投诉请按2\n3、聊天请按3\n4、退出请按4";
+		var input = Number(prompt(msg));
+		
+		switch(input){
+			case 1:
+				console.log("查询功能暂时无法实现!");
+				//break;
+			case 2:
+				console.log("本平台不接受投诉");
+				//break;
+			case 3:
+				console.log("聊天收费，10分钟5元钱");
+				//break;
+			case 4:
+				console.log("拜拜!");
+				//break;
+			default:
+				console.log("功能尚未开放...");
+		}
+
+	</script>
+ </body>
+</html>

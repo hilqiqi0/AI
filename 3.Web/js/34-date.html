@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  <script>
+		function testDate(){
+			//1、获取此时此刻时间
+			var now = new Date();
+			console.log(now);
+			//2、创建 2018/05/01
+			var date = new Date("2018/05/01");
+			//console.log(date);
+			//3、读取 now 的毫秒数
+			//console.log(now.getTime());
+			//4、读取时间分量
+			console.log("getFullYear:"+now.getFullYear());
+			console.log("getYear:"+now.getYear());
+			console.log("getMonth:"+now.getMonth());
+			console.log("getDate:"+now.getDate());
+			console.log("getDay:"+now.getDay());
+		}
+	</script>
+	<button onclick="testDate()">测试时间</button>
+ </body>
+</html>

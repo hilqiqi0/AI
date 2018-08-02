@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  <p>
+		<input type="text" id="gname" placeholder="商品名称">
+		<input type="text" id="gprice" placeholder="商品价格">
+		<input type="text" id="gcount" placeholder="购买数量">
+		<button onclick="btnAdd()">增加</button>
+	</p>
+	<table border="1" width="600px">
+		<thead>
+			<tr>
+				<td>商品名称</td>
+				<td>商品价格</td>
+				<td>购买数量</td>
+				<td>操作</td>
+			</tr>
+		</thead>
+		<tbody id="body"></tbody>
+	</table>
+	<script src="jquery-1.11.3.js"></script>
+	<script>
+		function btnAdd(){
+			//1、获取三个文本框的值，并创建两个按钮
+			var gname = $("#gname").val();
+			var gprice = $("#gprice").val();
+			var gcount = $("#gcount").val();
+			var $btnUpdate=$("<button>修改</button>");
+			var $btnDelete=$("<button>删除</button>");
+			//2、创建四个td，使用上方的值赋值
+			var $tdName = $("<td>"+gname+"</td>");
+			var $tdPrice = $("<td>"+gprice+"</td>");
+			var $tdCount = $("<td>"+gcount+"</td>");
+			var $tdOper = $("<td></td>");
+			$tdOper.append($btnUpdate);
+			$tdOper.append($btnDelete);
+			//3、创建一个tr，追加四个td为子元素
+			var $tr = $("<tr></tr>");
+			$tr.append($tdName);
+			$tr.append($tdPrice);
+			$tr.append($tdCount);
+			$tr.append($tdOper);
+			//4、将tr追加到tbody中
+			$("#body").append($tr);
+		}
+	</script>
+ </body>
+</html>

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  <p>
+		<input type="text" id="gname" placeholder="商品名称">
+		<input type="text" id="gprice" placeholder="商品价格">
+		<input type="text" id="gcount" placeholder="购买数量">
+		<button onclick="btnAdd()">增加</button>
+	</p>
+	<table border="1" width="600px">
+		<thead>
+			<tr>
+				<td>商品名称</td>
+				<td>商品价格</td>
+				<td>购买数量</td>
+				<td>操作</td>
+			</tr>
+		</thead>
+		<tbody id="body"></tbody>
+	</table>
+	<script src="jquery-1.11.3.js"></script>
+	<script>
+		function btnAdd(){
+			//1、获取三个文本框的值，并创建两个按钮
+			var gname = $("#gname").val();
+			var gprice = $("#gprice").val();
+			var gcount = $("#gcount").val();
+			var $btnUpdate=$("<button>修改</button>");
+			var $btnDelete=$("<button>删除</button>");
+
+			/*为$btnDelete绑定事件*/
+			$btnDelete.click(function(){
+				if(confirm("确认删除吗?")){
+					$(this).parent().parent().remove();
+				}
+			});
+
+			/*为$btnUpdate绑定事件*/
+			$btnUpdate.click(function(){
+				//获取购买数量的td
+				var $tdCount = $(this).parent().prev();
+				if(this.innerHTML == "修改"){
+					//执行修改的操作
+					this.innerHTML="确定";
+					//获取购买数量的文本
+					var count = $tdCount.html();
+					//清空购买数量td内的文本内容
+					$tdCount.empty();
+					//创建 - 按钮，并追加到 $tdCount 中
+					var $btnMinus = $("<button>-</button>");
+					//为 - 按钮绑定 click 事件
+					$btnMinus.click(function(){
+						//通过 this 找到文本框(下一个兄弟元素)
+						var iCount=$(this).next().val();
+						if(iCount <= 1){
+							iCount = 1;
+						}else{
+							iCount --;
+						}
+						$(this).next().val(iCount);
+					});
+					$tdCount.append($btnMinus);
+					//创建 文本框，并追加到 $tdCount 中
+					var $txtCount = $("<input>");
+					$txtCount.val(count);
+					$tdCount.append($txtCount);
+					//创建 + 按钮，并追加到 $tdCount 中
+					var $btnAdd = $("<button>+</button>");
+					$btnAdd.click(function(){
+						var iCount = $(this).prev().val();
+						if(iCount < 1){
+							iCount = 1;
+						}else{
+							++iCount;
+						}
+						$(this).prev().val(iCount);
+					});
+					$tdCount.append($btnAdd);
+					
+				}else{
+					//执行确定的操作
+					$(this).html("修改");
+					//通过 $tdCount 查找 文本框
+					var iCount = $tdCount.children("input").val();
+					$tdCount.html(iCount);
+				}
+			});
+
+
+
+
+			//2、创建四个td，使用上方的值赋值
+			var $tdName = $("<td>"+gname+"</td>");
+			var $tdPrice = $("<td>"+gprice+"</td>");
+			var $tdCount = $("<td>"+gcount+"</td>");
+			var $tdOper = $("<td></td>");
+			$tdOper.append($btnUpdate);
+			$tdOper.append($btnDelete);
+			//3、创建一个tr，追加四个td为子元素
+			var $tr = $("<tr></tr>");
+			$tr.append($tdName);
+			$tr.append($tdPrice);
+			$tr.append($tdCount);
+			$tr.append($tdOper);
+			//4、将tr追加到tbody中
+			$("#body").append($tr);
+		}
+	</script>
+ </body>
+</html>

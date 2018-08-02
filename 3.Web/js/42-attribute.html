@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+	<style>
+		.test{
+			color:red;
+			font-weight:bold;
+			font-size:24px;
+		}
+	</style>
+ </head>
+ <body>
+  <div id="container">
+		这是 id 为 container 的div元素
+	</div>
+	<button onclick="setAttr()">增加class属性</button>
+	<button onclick="getAttr()">查看class属性</button>
+	<button onclick="removeAttr()">移除class属性</button>
+	<script src="common.js"></script>
+	<script>
+		function setAttr(){
+			//为 container 元素动态绑定 class 属性，值为 test
+			$("container").setAttribute("class","test");
+			$("container").id = "main";
+		}
+
+		function getAttr(){
+			//查看 container 元素的 class 属性的值
+			console.log($("container").getAttribute("class"));
+		}
+
+		function removeAttr(){
+			$("container").removeAttribute("class");
+		}
+	</script>
+ </body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  <script>
+		/*声明一个升序排序函数*/
+		function sortAsc(a,b){
+			return a-b;
+		}
+
+		function testSort(){
+			var arr = [25,86,1121,46,52,9];
+			console.log("排序前:"+arr);
+			//arr.sort(sortAsc);
+			//使用匿名函数完成排序功能
+			//arr.sort( function(a,b){return a-b;} );
+			arr.sort(function(a,b){
+				return b-a;
+			});
+			console.log("排序后:"+arr);
+		}
+	</script>
+	<button onclick="testSort()">默认排序</button>
+ </body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>猜大小</title>
+ </head>
+ <body>
+  <script>
+		//1、循环外：生成一个1-100之间的随机数
+		var r = parseInt(Math.random()*100)+1;
+		/**
+		 * 2、循环内
+		 *  2.1 输入一个整数 -> input
+		 *  2.2 如果input 大于 r ，给出提示
+		 *  2.3 如果input 小于 r ，给出提示
+		 *  2.4 如果input 等于 r ，给出提示，退出
+		 *  2.5 如果input 是 exit ，则退出
+		 */
+		 do{
+			var input = prompt("请输入一个数字(exit退出):");
+			if(input > r){
+				alert("您猜大了!");
+			}else if(input < r){
+				alert("您猜小了!");
+			}else if(input == r){
+				alert("您猜对了!拜拜！");
+			}else if(input == "exit"){
+				alert("退出游戏！拜拜！");
+			}else{
+				alert("输入有误!");
+			}		
+		 }while(input != r && input != "exit");
+		 //输入的数据即不正确，也不是exit的时候，进入到循环中
+
+	</script>
+ </body>
+</html>

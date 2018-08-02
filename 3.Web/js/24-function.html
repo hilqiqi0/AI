@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  <script>
+		function show1(){
+			console.log("这是一个无参函数");
+		}
+
+		function show2(name){
+			console.log("这是一个有参函数");
+			console.log("参数值为:"+name);
+		}
+
+		function show3(name){
+			return "欢迎:"+name;
+		}
+
+		//函数调用
+		/*var ret = show1();
+		console.log(ret);*/
+
+		/*show2('赵敏');*/
+	</script>
+	
+	<button onclick="show1()">函数调用</button>
+ </body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  <script>
+		var num = Number(prompt("请输入数字:"));
+		var isSu = true;
+		//从2开始，到num-1结束，如果期间被整除了，那么num就不是素数
+		for(var i=2;i<num;i++){
+			if(num % i == 0){
+				//console.log(num+"不是素数!");
+				isSu = false;
+				break;
+			}
+		}
+		if(isSu){
+			console.log(num+"是素数");
+		}else{
+			console.log(num+"不是素数");
+		}
+		/*if(i == num){
+			console.log(num+"是素数!");
+		}*/
+	</script>
+ </body>
+</html>

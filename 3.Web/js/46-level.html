@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  <div id="d1">
+		<h3 id="title">悯农</h3>
+		<p id="p1">锄禾日当午</p>
+		<p>汗滴禾下土</p>
+		<p>谁知盘中餐</p>
+		<p>粒粒皆辛苦</p>
+	</div>
+	<button onclick="getParent()">获取title的父元素</button>
+	<button onclick="getD1Child()">获取d1的子元素</button>
+	<button onclick="getD1Children()">获取d1的子元素节点</button>
+
+	<button onclick="getTitleSibling()">获取title的兄弟节点</button>
+
+	<script src="common.js"></script>
+	<script>
+		function getParent(){
+			var title = $("title");
+			var div = title.parentNode;
+			console.log(div);
+			div.style.color = "orange";
+		}
+
+		function getD1Child(){
+			var d1 = $("d1");
+			var arr = d1.childNodes;
+			for(var i=0;i<arr.length;i++){
+				if(arr[i].nodeType == 1){
+					console.log(arr[i]);
+				}
+			}
+		}
+
+		function getD1Children(){
+			var arr = $("d1").children;
+			console.log(arr);
+		}
+
+		function getTitleSibling(){
+			var title = $("title");
+			//获取title的下一个兄弟节点
+			var n1 = title.nextSibling;
+			console.log(n1);
+			//获取title的下一个元素兄弟节点
+			var n2 = title.nextElementSibling;
+			console.log(n2);
+			//获取p1的上一个兄弟节点
+			var p1 = $("p1");
+			var pre1 = p1.previousSibling;
+			console.log(pre1);
+			//获取p1的上一个兄弟元素节点
+			var pre2 = p1.previousElementSibling;
+			console.log(pre2);
+		}
+	</script>
+ </body>
+</html>

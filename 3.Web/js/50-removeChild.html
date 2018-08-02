@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  <div id="container">
+		<p id="pp">这是container中的pp</p>
+	</div>
+	<button onclick="removePP()">删除pp</button>
+	<script src="common.js"></script>
+	<script>
+		function removePP(){
+			//$("container").removeChild($("pp"));
+			$("pp").parentNode.removeChild($("pp"));
+		}
+	</script>
+ </body>
+</html>

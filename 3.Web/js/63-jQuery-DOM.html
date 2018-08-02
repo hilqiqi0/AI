@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+	<script src="jquery-1.11.3.js"></script>
+ </head>
+ <body>
+  <div id="container">
+		ID为container的元素
+	</div>
+	<button onclick="btnNew()">创建新元素</button>
+	<script>
+		function btnNew(){
+			//1、创建一个 img 标记
+			var $img = $("<img>");
+			//2、指定其 src 属性值
+			$img.attr("src","images/jquery.jpg");
+			
+			//3、插入到网页中
+			//$("#container").append($img);
+			//$("#container").prepend($img);
+			$("#container").after($img);
+		}
+	</script>
+ </body>
+</html>

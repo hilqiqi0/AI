@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+	<style>
+		.redBack{
+			color:red;
+		}
+	</style>
+ </head>
+ <body>
+  内容：<input type="text" id="content">
+	<button onclick="btnShow()">显示</button>
+	<button onclick="btnToggle()">切换样式</button>
+	<div id="contentShow"></div>
+	<script src="jquery-1.11.3.js"></script>
+	<script>
+		function btnShow(){
+			//1、从 content 中获取内容
+			var value = $("#content").val();
+			//2、将 内容 构建成 h1 赋值给 contentShow
+			$("#contentShow").html("<h1>"+value+"</h1>");
+		}
+
+		function btnToggle(){
+			$("#contentShow").toggleClass("redBack");
+		}
+	</script>
+ </body>
+</html>

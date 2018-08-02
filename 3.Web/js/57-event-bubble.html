@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>冒泡</title>
+	<style>
+		#d1{
+			border:1px solid #000;
+			width:400px;
+			height:400px;
+			background:red;
+		}
+		#d2{
+			border:1px solid #000;
+			width:200px;
+			height:200px;
+			background:yellow;
+			margin:100px auto;
+		}
+
+		#d3{
+			border:1px solid #000;
+			width:100px;
+			height:100px;
+			background:orange;
+			margin:50px auto;
+		}
+	</style>
+	<script src="common.js"></script>
+	<script>
+		window.onload = function(){
+			$("d1").onclick = function(){
+				alert("您点击了d1元素");
+			}
+
+			$("d2").onclick = function(){
+				alert("您点击了d2元素");
+			}
+
+			$("d3").onclick = function(event){
+				alert("您点击了d3元素");
+				//阻止事件冒泡
+				event.stopPropagation();
+			}
+		}
+	</script>
+ </head>
+ <body>
+  <div id="d1">
+		<div id="d2">
+			<div id="d3"></div>
+		</div>
+	</div>
+ </body>
+</html>

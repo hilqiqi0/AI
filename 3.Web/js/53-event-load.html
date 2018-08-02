@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+	<style>
+		#d1{
+			width:200px;
+			height:200px;
+			border:2px solid #000;
+		}
+	</style>
+	<script src="common.js"></script>
+	<script>
+		window.onload = function(){
+			//为d1绑定click事件
+			$("d1").onclick=function(){
+				alert("您点击了d1元素");
+			}
+		}
+	</script>
+ </head>
+ <body>
+  <div id="d1"></div>
+ </body>
+</html>

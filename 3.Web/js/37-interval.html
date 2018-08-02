@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>定时器</title>
+ </head>
+ <body>
+  <script>
+		var timer;
+		var t;
+		function showAlert(){
+			timer = setInterval(function(){
+				alert("等一会，我接着弹!");
+			},5000);
+		}
+
+		function clearAlert(){
+			clearInterval(timer);
+		}
+
+		function showTime(){
+			t = setInterval(function(){
+				var now = new Date();
+				console.log(now.toLocaleString());
+			},1000);
+		}
+
+		function clearTime(){
+			clearInterval(t);
+		}
+
+		function closeHTML(){
+			if(confirm("确认要关闭吗?")){
+				setTimeout(function(){
+					close();
+				},5000);
+			}
+		}
+	</script>
+	<button onclick="clearAlert()">清除定时器</button>
+	<button onclick="showTime()">开始</button>
+	<button onclick="clearTime()">暂停</button>
+	<button onclick="closeHTML()">关闭网页</button>
+ </body>
+</html>

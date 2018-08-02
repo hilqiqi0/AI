@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+	<style>
+		#d1,#d2{
+			width:200px;
+			height:200px;
+			border:2px solid #000;
+		}
+	</style>
+	<script src="common.js"></script>
+	<script>
+		window.onload = function(){
+			/*为d1元素绑定click事件*/
+			$("d1").onclick = function(event){
+				/*console.log(event.target);
+				console.log(this);*/
+				console.log(event.offsetX+":"+event.offsetY);
+			}
+		}
+
+		function d2Click(event){
+			console.log(event.target);
+		}
+	</script>
+ </head>
+ <body>
+  <div id="d1"></div>
+	<div id="d2" onclick="d2Click(event)"></div>
+ </body>
+</html>

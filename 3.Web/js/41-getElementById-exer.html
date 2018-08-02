@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  <input type="text" id="msg">
+	<button onclick="btnShow()">显示</button>
+	<div id="msg-show"></div>
+	<script src="common.js"></script>
+	<script>
+		function btnShow(){
+			//1、获取 msg 的 value
+			//var v=document.getElementById("msg").value;
+			//2、将 value 两端添加 <h1> 再赋值给msg-show
+			//v = "<h1>"+v+"</h1>";
+			//document.getElementById("msg-show");
+
+			$("msg-show").innerHTML = "<h1>"+$("msg").value+"</h1>";
+
+			console.log("节点类型："+$("msg-show").nodeType);
+			console.log("节点名称："+$("msg-show").nodeName);
+		}
+	</script>
+ </body>
+</html>

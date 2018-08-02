@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  <div id="d1">
+		<h1>这是id为d1中的h1元素</h1>
+	</div>
+	<p>
+		用户名：<input type="text" id="uname">
+	</p>
+	<button onclick="showInfo()">获取d1的内容</button>
+	<button onclick='getUname()'>获取用户名</button>
+	<script>
+		function getUname(){
+			//1、获取id为uname的元素
+			var uname = document.getElementById("uname");
+			//2、获取 value 属性值
+			console.log(uname.value);
+		}
+
+		function showInfo(){
+			//1、获取id为d1的元素
+			var d1 = document.getElementById("d1");
+			//2、获取 innerHTML 属性值，并打印在控制台上
+			//console.log(d1.innerHTML);
+			//3、为 innerHTML 属性赋值
+			//d1.innerHTML = "<h2>内容被修改成h2标记了</h2>";
+
+			//4、获取 innerText
+			//console.log(d1.innerText);
+			d1.innerText = "<h2>内容被修改成h2标记了</h2>";
+		}
+	</script>
+ </body>
+</html>

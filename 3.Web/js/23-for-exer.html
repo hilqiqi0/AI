@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  <!-- <script>
+  		// i 表示的就是 行数
+  		for(var i=1;i<=5;i++){
+  			var show = "";
+  			//累加 空格 的循环
+  			for(var j=1;j<=5-i;j++){
+  				show += " ";
+  			}
+  			//累加 * 的循环
+  			for(var k=1;k<=2*i-1;k++){
+  				show += "*";
+  			}
+  			//打印show的值
+  			console.log(show);
+  		}
+  	</script> -->
+
+		<script>
+			for(var i=1;i<=9;i++){
+				var show = "";
+				for(var j=1;j<=i;j++){
+					show += j+"*"+i+"="+(j*i)+"\t";
+				}
+				console.log(show);
+			}
+		</script>
+ </body>
+</html>

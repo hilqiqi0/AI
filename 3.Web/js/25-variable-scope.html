@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  <script>
+		var g_var1 = "这是全局变量g_var1";
+
+		function fun1(){
+			var str = "这是声明在fun1中的变量";
+			g_var2 = "这是声明在fun1中的全局变量";
+			console.log(str);
+			console.log(g_var1);
+			console.log(g_var2);
+		}
+
+		function fun2(){
+			/*使用时报错，str是fun1中的局部变量*/
+			/*console.log(str);*/
+			/*使用 全局变量g_var1*/
+			console.log(g_var1);
+			/*使用 全局变量g_var2*/
+			console.log(g_var2);
+		}
+	</script>
+	<button onclick="fun1()">fun1</button>
+	<button onclick="fun2()">fun2</button>
+ </body>
+</html>

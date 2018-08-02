@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  <script>
+		var year=prompt("Year:");
+		var month=prompt("Month:");
+		var day=Number(prompt("Day:"));
+		var totalDays = 0;
+		switch(month-1){
+			case 11:
+				totalDays += 30;
+			case 10:
+				totalDays += 31;
+			case 9:
+				totalDays += 30;
+			case 8:
+				totalDays += 31;
+			case 7:
+				totalDays += 31;
+			case 6:
+				totalDays += 30;
+			case 5:
+				totalDays += 31;
+			case 4:
+				totalDays += 30;
+			case 3:
+				totalDays += 31;
+			case 2:
+				totalDays += 28;
+				if(year%4==0&&year%100!=0||year%400==0)
+					totalDays += 1;
+			case 1:
+				totalDays += 31;
+		}
+		totalDays += day;
+		console.log(totalDays);
+	</script>	
+ </body>
+</html>

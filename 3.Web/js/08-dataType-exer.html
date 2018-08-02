@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  <script>
+		//1、弹出输入提示框，允许用户输入数据，并将数据保存在变量input中
+		var input=window.prompt("请输入一个数字：");
+		//2、将 input + 10 再保存给input
+		/*input = input + 10;
+		console.log(input);*/
+		//3、打印 input 的数据类型
+		//console.log(typeof input);
+		//4、将input先转换为数字，再做+10的运算
+		input = Number(input) + 10;
+		console.log(input);
+
+	</script>
+ </body>
+</html>

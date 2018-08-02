@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+	<style>
+		#d1,#d2{
+			width:400px;
+			height:400px;
+			border:2px solid #000;
+		}
+		#container{
+			position:relative;
+		}
+		#d2{
+			position:absolute;
+			left:420px;
+			top:0px;
+			display:none;
+			text-align:center;
+			line-height:400px;
+			font-size:24px;
+			font-weight:bold;
+		}
+	</style>
+	<script src="common.js"></script>
+	<script>
+		window.onload = function(){
+			/*为d1绑定鼠标移入事件*/
+			$("d1").onmouseover = function(){
+				$("d2").style.display="block";
+			}
+			/*为d1绑定鼠标移动事件*/
+			$("d1").onmousemove = function(event){
+				$("d2").innerHTML = event.offsetX+":"+event.offsetY;
+			}
+			/*为d1绑定鼠标移出事件*/
+			$("d1").onmouseout = function(){
+				$("d2").style.display="none";
+			}
+		}
+	</script>
+ </head>
+ <body>
+  <div id="container">
+		<div id="d1"></div>
+		<div id="d2"></div>
+	</div>
+ </body>
+</html>

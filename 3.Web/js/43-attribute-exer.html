@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  <a id="anchor" href="http://www.baidu.com">百度</a>
+	<button onclick="change()">修改</button>
+	<script src="common.js"></script>
+	<script>
+		function change(){
+			var a = $("anchor");
+			//修改 a 的href
+			a.href="http://www.Google.cn";
+			//修改 a 的文本
+			a.innerHTML="谷歌";
+		}
+	</script>
+ </body>
+</html>

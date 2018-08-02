@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  <script>
+		function testStack(){
+			var books = ["老人与海","钢铁是咋练成的","海底两万里"];
+			var bName = prompt("请输入书名:");
+			var len = books.push(bName);
+			console.log("共有"+len+"本书");
+			console.log("所有书籍:"+books);
+			//移出最后一本书
+			var rBook = books.pop();
+			console.log("移除的书是:"+rBook);
+			console.log("现有书籍:"+books);
+		}
+
+		function removeElem(){
+			var books = ["老人与海","钢铁是怎样炼成的","海底两万里","雾都孤儿"];
+			console.log("原始书籍:"+books);
+			var bName = prompt("请输入要删除的书名:");
+			var index = -1;
+
+			for(var i=0;i<books.length;i++){
+				if(books[i] == bName){
+					index = i;
+					break;
+				}
+			}
+
+			if(index == -1){
+				alert("您要删除的书籍不存在!");
+			}else{
+				//从找到的书开始，让后一本一直赋值前一本，直到倒数第二本为止
+				for(var i=index;i<books.length-1;i++){
+					books[i] = books[i+1];
+				}
+				//移除最后一本书
+				books.pop();
+				console.log("删除后:"+books);
+			}
+		
+		}
+
+		function arrayTest(){
+			var books = [
+				["西游记","三国演义","水浒传","红楼梦"],
+				["老人与海","雾都孤儿","海底两万里"]
+			];
+
+			for(var i=0;i<books.length;i++){
+				console.log(books[i]);
+				for(var j=0;j<books[i].length;j++){
+					console.log(books[i][j]);
+				}
+			}
+		}
+	</script>
+	<button onclick="testStack()">存放书籍</button>
+	<button onclick="removeElem()">删除书籍</button>
+	<button onclick="arrayTest()">二维数组</button>
+ </body>
+</html>

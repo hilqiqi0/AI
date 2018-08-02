@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  <script>
+		function decode2Bin(){
+			var num = Number(prompt("请输入一个数字:"));
+			var n = num;
+			var arr = [];
+			while(num != 0){
+				//获取 num % 2 的值，并保存进 arr 中
+				arr[arr.length] = num % 2;
+				//将 num / 2 转换为整数，再赋值给num
+				num = parseInt(num / 2);
+			}
+			//将 arr 反转
+			arr.reverse()
+			console.log(n+"的二进制是:"+arr.join(""));
+		}
+	</script>
+	<button onclick="decode2Bin()">转换为二进制</button>
+ </body>
+</html>

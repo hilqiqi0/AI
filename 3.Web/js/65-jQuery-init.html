@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+	<button id="btnClick">测试事件绑定</button>
+  <script src="jquery-1.11.3.js"></script>
+	<script>
+		$(function(){
+			//页面加载后执行
+			//DOM树加载完毕后执行
+			//window.alert("这是在加载后执行的!");
+
+			//为 #btnClick 绑定 click 事件
+			$("#btnClick").click(function(){
+				alert("这是动态绑定的事件");
+				//this表示的是激发当前操作的DOM对象，如果想使用jQUery提供的操作的话，则需要先转换成jQuery对象，再做操作
+				console.log(this);
+				console.log($(this));
+			});
+
+		});
+	</script>
+ </body>
+</html>

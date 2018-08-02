@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  <script>
+		function testArray(){
+			var arr1 = ["奥巴马","特朗普","金正恩","普京","默克尔"];
+			//1、打印arr1数组中的元素
+			console.log("arr1:"+arr1);
+			//2、将 arr1中的第一个元素更改为"马克龙"
+			arr1[0] = "马克龙";
+			console.log("arr1:"+arr1);
+			//3、获取 arr1 中的第三个元素
+			console.log("arr1数组中的第三个元素是:"+arr1[2]);
+			//4、获取 arr1 中的第十个元素
+			console.log("arr1数组中的第十个元素是:"+arr1[9]);
+			//5、为 arr1 中的第十个元素赋值为 "文在寅"
+			arr1[9] = "文在寅";
+			console.log(arr1);
+		}
+	</script>
+	<button onclick="testArray()">数组操作1</button>
+ </body>
+</html>

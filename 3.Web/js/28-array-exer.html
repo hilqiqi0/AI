@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  <script>
+		/**
+		 * 循环录入数据并追加到数组中
+		 */
+		function testArr1(){
+			//循环外：声明一个空数组
+			var arr = new Array();
+			//循环录入数据并保存进数组
+			while(true){
+				var input = prompt("请输入数据(exit退出):");
+
+				/*if(input != "exit"){
+					arr[arr.length]=input;
+				}else{
+					break;
+				}*/
+
+				if(input == "exit")
+					break;
+				arr[arr.length]=input;
+			}
+			console.log(arr);
+		}
+
+		function testArr2(){
+			var arr = new Array("金正恩","金正日","金日成");
+			console.log(arr);
+			//清空arr数组中的元素
+			arr.length = 0;
+			console.log(arr);
+		}
+	</script>
+	<button onclick="testArr1()">练习1</button>
+	<button onclick="testArr2()">练习2</button>
+ </body>
+</html>

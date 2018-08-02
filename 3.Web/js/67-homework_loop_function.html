@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  <script>
+		
+		/**
+		 * 判断指定的年份是否为闰年并返回
+		 * 参数year:表示要判断的年份
+		 * 返回值：true为闰年，false为非闰年
+		 */
+		function isRun(year){
+			return year%4==0&&year%100!=0||year%400==0;
+		}
+
+		function calDate(){
+			var year = prompt("Year:");
+			var month = prompt("Month:");
+			var day = Number(prompt("Day:"));
+			var totalDays = 0;
+			//计算从1900年开始到year-1年为止的所有天数
+			for(var i=1900;i<year;i++){
+				//i表示的就是从1900年开始的每一年
+				totalDays += 365;
+				if(isRun(i)){
+					totalDays += 1;
+				}
+			}
+			//累加year年从1月开始到month-1月为止天数
+			for(var i=1;i<month;i++){
+				switch(i){
+					case 1:
+					case 3:
+					case 5:
+					case 7:
+					case 8:
+					case 10:
+						totalDays += 31;
+						break;
+					case 4:
+					case 6:
+					case 9:
+					case 11:
+						totalDays += 30;
+						break;
+					case 2:
+						totalDays += 28;
+						if(isRun(year))
+							totalDays += 1;
+						break;
+				}
+			}
+			//累加 day
+			totalDays += day;
+			//计算是星期几(0(星期日)-6(星期六))
+			var date = totalDays % 7;
+			var show = "";
+			switch(date){
+				case 0:
+					show = "日";
+					break;
+				case 1:
+					show = "一";
+					break;
+				case 2:
+					show = "二";
+					break;
+				case 3:
+					show = "三";
+					break;
+				case 4:
+					show = "四";
+					break;
+				case 5:
+					show = "五";
+					break;
+				case 6:
+					show = "六";
+					break;
+			}
+			console.log(year+"年"+month+"月"+day+"日是星期"+show);
+		}
+	</script>
+
+	<button onclick="calDate()">日期计算器</button>
+ </body>
+</html>

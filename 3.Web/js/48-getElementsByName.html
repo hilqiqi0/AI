@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  <input type="checkbox" name="hobby" value="1">吃
+	<input type="checkbox" name="hobby" value="2">喝
+	<input type="checkbox" name="hobby" value="3">玩
+	<input type="checkbox" name="hobby" value="4">乐
+	<button onclick="getValue()">获取值</button>
+	<script src="common.js"></script>
+	<script>
+		function getValue(){
+			//获取所有的name为hobby元素
+			var arr = document.getElementsByName("hobby");
+			for(var i=0;i<arr.length;i++){
+				if(arr[i].checked){
+					console.log(arr[i].value);
+				}
+			}
+		}
+	</script>
+ </body>
+</html>

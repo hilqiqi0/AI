@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  <button onclick="createElem()">创建元素</button>
+	<div id="main">
+		<p id="pp">这是一段测试p元素</p>
+	</div>
+	<div id="d1"></div>
+	<script src="common.js"></script>
+	<script>
+		function createElem(){
+			//1、创建一对div
+			var div = document.createElement("div");
+			//2、设置其id属性值为container
+			div.id = "container";
+			//3、设置其文本为动态创建的div
+			div.innerHTML="动态创建的div";
+
+			//4、将 div 添加到 main 的内部
+			//$("main").appendChild(div);
+			//5、将div添加到main内部pp元素之前
+			$("main").insertBefore(div,$("pp"));
+
+			$("d1").innerHTML = "<div id='mydiv1' style='color:red;font-size:24px;'>这是动态创建的div元素,添加到d1当中</div>";
+		}
+	</script>
+ </body>
+</html>

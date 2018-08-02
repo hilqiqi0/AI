@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  <ul>
+		<li>床前明月光</li>
+		<li>疑是地上霜</li>
+		<li>举头望明月</li>
+		<li>低头思故乡</li>
+	</ul>
+	<ul>
+		<li>床前明月光</li>
+		<li>疑是地上霜</li>
+		<li>举头望明月</li>
+		<li>低头思故乡</li>
+	</ul>
+	<button onclick="btn1Click()">:first</button>
+	<button onclick="btn2Click()">:first-child</button>
+	<script src="jquery-1.11.3.js"></script>
+	<script>
+		function btn1Click(){
+			$("li:first").css("color","red");
+		}
+		function btn2Click(){
+			$("li:first-child").css("background",'yellow');
+		}
+	</script>
+ </body>
+</html>
