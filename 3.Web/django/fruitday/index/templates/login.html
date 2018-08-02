@@ -1,0 +1,82 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>
+  	{% block hTitle %}
+  		天天果园-会员登录
+  	{% endblock %}
+  </title>
+  <link rel="stylesheet" href="{% static 'css/login.css'%}">
+  {% block style %}
+  {% endblock %}
+ </head>
+ <body>
+  <div id="container">
+		<!-- 上：会员登录 -->
+		<h2>
+			{% block title%}
+				会员登录
+			{% endblock %}
+		</h2>
+		<!-- 下左：登录图像 -->
+		<p>
+			<img src="{% static 'img/huiyuan.jpg'%}">
+			<!-- 使用绝对定位实现会员注册 -->
+			{% block anchor %}
+				<a href="{% url 'reg' %}">会员注册</a>
+			{% endblock %}
+		</p>
+		<!-- 下右：登录表单 -->
+		<div id="login">
+			{% block form %}
+			<form action="/login/" method="post">
+				{% csrf_token %}
+				<!-- 第一行：手机号 -->
+				<!-- <div class="form-line">
+					<p>手机号</p>
+					<div>
+						<input type="text" name="uphone" class="form-control">
+					</div>
+				</div> -->
+				<!-- 第二行：密码 -->
+				<!-- <div class="form-line">
+					<p>密码</p>
+					<div>
+						<input type="password" name="upwd" class="form-control" placeholder="请输入6-20位号码字符">
+					</div>
+				</div> -->
+				{% for field in form %}
+				 <div class="form-line">
+					<p>{{field.label}}</p>
+					<div>
+						{{field}}
+				 	</div>
+				 </div>
+				{% endfor %}
+				<!-- 第三行：记住密码 忘记密码 -->
+				<div class="form-line">
+					<p></p>
+					<div>
+						<p class="forget">
+							<a href="#">忘记密码</a>
+							<a href="#">快捷登录</a>
+						</p>
+						<input type="checkbox" name="isSaved" checked id="isSaved"> 记住密码
+					</div>
+				</div>
+				<!-- 第四行：登录 & 注册会员 -->
+				<div class="form-line">
+					<p></p>
+					<div>
+						<a href="{% url 'reg' %}" class="goReg">注册会员</a>
+						<input type="submit" value="登录" class="btnLogin">
+					</div>
+				</div>
+			</form>
+			{% endblock %}
+		</div>
+	</div>
+ </body>
+</html>

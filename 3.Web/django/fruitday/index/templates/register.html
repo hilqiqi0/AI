@@ -1,0 +1,73 @@
+{% extends 'login.html'%}
+
+{% block hTitle %}
+    天天果园　－　会员注册
+{% endblock %}
+
+{% block title %}
+    注册会员
+{% endblock %}
+
+{% block anchor %}
+    <a href="{% url 'login' %}">会员登录</a>
+{% endblock %}
+
+{% block form %}
+    <form action="/register/" method="post">
+        {% csrf_token %}
+        <!-- 第一行：手机号 -->
+        <div class="form-line">
+            <p>手机号</p>
+            <div>
+                <input type="text" name="uphone" class="form-control">
+                <p class='err'>
+                    {{errMsg}}
+                </p>
+            </div>
+        </div>
+        <!-- 第二行：密码 -->
+        <div class="form-line">
+            <p>密码</p>
+            <div>
+                <input type="password" name="upwd" class="form-control" placeholder="请输入6-20位号码字符">
+            </div>
+        </div>
+        <!-- 第三行：确认密码 -->
+        <div class="form-line">
+            <p>确认密码</p>
+            <div>
+                <input type="password" name="cpwd" class="form-control" placeholder="请输入6-20位号码字符">
+            </div>
+        </div>
+        <!-- 第四行：用户名 -->
+        <div class="form-line">
+            <p>用户名</p>
+            <div>
+                <input type="text" name="uname" class="form-control">
+            </div>
+        </div>
+        <!-- 第五行：邮箱 -->
+        <div class="form-line">
+            <p>邮箱</p>
+            <div>
+                <input type="email" name="uemail" class="form-control">
+            </div>
+        </div>
+        <!-- 第六行：提交　＆　链接 -->
+        <div class="form-line">
+            <p></p>
+            <div>
+                <a href="{% url 'login' %}" class="goReg">会员登录</a>
+                <input type="submit" value="注册" class="btnLogin">
+            </div>
+        </div>
+    </form>
+{% endblock %}
+
+{% block style %}
+    <style>
+        #login{
+            margin-top:20px;
+        }
+    </style>
+{% endblock %}

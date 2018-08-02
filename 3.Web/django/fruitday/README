@@ -1,0 +1,69 @@
+./manage.py
+    #!/usr/bin/env python3
+
+fruitday
+    __init__.py
+        import pymysql
+        pymysql.install_as_MySQLdb()
+
+    settings.py
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.mysql',
+                'NAME': 'fruitday',
+                'USER': 'root',
+                'PASSWORD' : '123456',
+                'HOST' : 'localhost',
+                'PORT' : '3306'
+            }
+        }
+        LANGUAGE_CODE = 'zh-Hans'
+        TIME_ZONE = 'Asia/Shanghai'
+        STATICFILES_DIRS=(BASE_DIR,'static')
+
+    urls.py
+        urlpatterns = [
+            url(r'^admin/', admin.site.urls),
+            url(r'^',include('index.urls')),
+        ]
+
+static
+    静态文件
+
+index
+    static
+        静态文件
+
+    templates
+        模板
+
+    forms.py
+        class LoginForm(forms.ModelForm):
+            class Meta:
+                pass
+
+    models.py
+        class GoodsType(models.Model):
+            pass
+        class Goods(models.Model):
+            pass
+        class Users(models.Model):
+            pass
+
+    urls.py
+        urlpatterns = [
+            url(r'^login/$',login_views,name="login"),
+            url(r'^register/$',register_views,name="reg"),
+        ]
+    views.py
+        def login_views(request):
+            pass
+        def register_views(request):
+            pass
+
+
+关键命令：
+    启动（三选一）：
+    python3 manage.py runserver
+    ./manage.py runserver
+    ./manage.py runserver 0.0.0.0:8000
