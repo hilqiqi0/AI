@@ -1,0 +1,37 @@
+<ul style="list-style-type:none;width: 70%;margin: 30px auto;">
+        {%for blog in blogs%}
+        <li>
+            <table width="100%">
+                <tr>
+                    <td rowspan="4" width="30%" align="center">
+                        <table>
+                            <tr><td>
+                                <img width="128px" height="128px"
+                                src= {%if blog['avatar']%}
+                                        static/images/{{blog['avatar']}}
+                                     {%else%}
+                                        static/images/default_avatar.png
+                                     {%end%}
+
+
+                                >
+                            </td></tr>
+                            <tr><td align="center"><p style="width: 100px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">{{blog['author']}}</p></td></tr>
+                        </table>
+                    </td>
+                    <td>{{blog['title']}}</td>
+                </tr>
+                <tr><td>{{blog['tags']}}</td></tr>
+                <tr><td>
+                    {{blog['content']}}</td></tr>
+                <tr><td align="right">
+                    {%if blog['count']%}
+                        评论数量　{{blog['count']}}
+                    {%else%}
+                        抢个沙发
+                    {%end%}
+                </td></tr>
+            </table>
+        </li>
+        {%end%}
+    </ul>
