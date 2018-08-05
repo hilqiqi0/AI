@@ -1,0 +1,34 @@
+{%extends base.html%}
+{%block title%}注册{%end%}
+{%block head%}
+    <script src="static/js/jquery-3.2.1.js"></script>
+    <script>
+        $(function () {
+            var inputusername = $('#input_username');
+            var spanusername = $('#span_username');
+            inputusername.blur(function () {
+                var name = inputusername.val();
+                $.ajax({
+                    url:"/check",
+                    data:{"username":name,"type":"regist"},
+                    type:"post",
+                    datatype:"json",
+                    success:function (data) {
+                        if(data.msg=='fail'){
+                            spanusername.text('该用户名已被占用');
+                        }else{
+                            spanusername.text('');
+                        }
+                    },
+                    error:function (err) {
+                        console.log('错误信息：'+err)
+                    }
+                });
+            });
+        });
+
+    </script>
+{%end%}
+{%block body%}
+{%module registmodule()%}
+{%end%}
