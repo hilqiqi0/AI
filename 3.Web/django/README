@@ -39,5 +39,8 @@ fruitday
         通过数据库自动导出Models：
             ./manage.py inspectdb > 文件名.py
 
-
+finally
+    django项目
+    start：初版学习
+    end：整理文件
 
