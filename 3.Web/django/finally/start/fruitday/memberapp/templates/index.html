@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>
+            {% block title %}首页 {% endblock %}
+        </title>
+    </head>
+    <body>
+
+    {% if request.session.user_name %}
+        欢迎您，{{ request.session.user_name }}
+        <a href="{% url 'login_out' %}">退出</a>
+    {% else %}
+        <a href="{% url 'login' %}">登录</a>
+        <a href="{% url 'register' %}">注册</a>
+    {% endif %}
+
+<br>
+    ＊＊＊＊＊＊＊＊＊＊＊＊<br>
+{% block content %}
+
+
+    方法一：
+    水果：
+    {% for goods in good_list.fruit_goods %}
+        <a href="{{ goods.get_absolute_url }}">{{ goods.title }}</a>
+        {{ goods.price }}
+    {% endfor %}
+    <br>
+    ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+    <br>
+    方法二： <br>
+    {% for t in good_list.types %}
+        {{ t.title }}
+        <br>
+        {% for g in good_list.goods %}
+            {% if t.title == g.type.title %}
+                <a href="{{ g.get_absolute_url }}">{{ g.title }}</a>
+            {% endif %}
+        {% endfor %}
+        <br>
+    {% endfor %}
+    <br>
+    ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+    <br>
+    方法三： <br>
+    {% for m in good_list.ac %}
+        {{ m.type }}<br>
+        {% for gs in m.goods %}
+            {{ gs.title }}
+
+        {% endfor %}
+        <br>
+    {% endfor %}
+
+{% endblock %}
+
+
+
+    </body>

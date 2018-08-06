@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>
+            注册页
+        </title>
+    </head>
+    <body>
+        <form action="{% url 'register_in' %}" method="post">
+            {% csrf_token %}
+            用户名：<input type="text" name="user_name" id="user_name"><br>
+            密码：<input type="password" name="user_pwd" id="user_pwd"><br>
+            确认密码:<input type="password" name="user_cpwd" id="user_cpwd"><br>
+            Email:<input type="text" name="email" id="email"><br>
+            电话：<input type="text" name="phone" id="phone"><br>
+
+            <input type="submit" value="注册" name="">
+
+        </form>
+        {{ message }}
+    </body>
+</html>

@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %} 购物车{% endblock %}
+{% block content %}
+    <script type="text/javascript" src="{% static 'js/jquery-1.11.3.js' %}"></script>
+
+    <br>
+    {% for cart in find_goods %}
+        <input type="checkbox" name="check" _i="{{ cart.id }}" _n="{{ cart.goods.title }}" _p="{{ cart.goods.price }}">
+        {{ cart.goods.title }}
+        {{ cart.goods.price }}
+        <input type="text" value="{{ cart.ccount }}" name="cot">
+        <br>
+    {% endfor %}
+    <a onclick="caToor()">下订单</a>
+    <script>
+    function caToor() {
+        var carts=[];
+        $.each($('input:checkbox:checked'),function () {
+                var cartg = {};
+                cartg['id']=$(this).attr('_i');
+                cartg['name']=$(this).attr('_n');
+                cartg['price']=$(this).attr('_p');
+                cartg['count']=$(this).next('input').attr('value');
+                carts.push(cartg);
+            }
+        );
+        sessionStorage.setItem('acot',JSON.stringify(carts));
+{#        localStorage#}
+        location.href='/cartinfo/order';
+    }
+    </script>
+{% endblock %}

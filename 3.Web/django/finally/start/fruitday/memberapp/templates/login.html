@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>
+            登录页
+        </title>
+    </head>
+    <body>
+        <form action="{% url 'login_in' %}" method="post">
+            {% csrf_token %}
+            用户名：<input type="text" name="user_name" id="user_name"><br>
+            密码：<input type="password" name="user_pwd" id="user_pwd"><br>
+            <input type="submit" value="登录">
+        </form>
+
+    {{ message }}
+    </body>
