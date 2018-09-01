@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>个股行情</title>
+<!-- canvas resources -->
+<link rel="stylesheet" href="/static/css/nav.css" type="text/css">
+</head>
+<body style="line-height: 1.5; font-family: Tahoma;background:#fafafa;" class="stockpick_mainbody all_height">
+<div class="new_detail fl">
+	      <div class="price_box fl" id="hexm_curPrice_wrap">
+				<div class="minute_price clearfix" id="quote_header">
+					<span class="price" id="hexm_curPrice">{{price}}</span>
+					<div class="price_details">
+						<span class="plus_rate" id="hexm_float_price">{{change}}</span>
+						<span class="price_plus" id="hexm_float_rate">{{perce}}%</span>
+					</div> 
+				</div>
+				<div class="minute_price ting clearfix" id="quote_header2" style="display:none">
+					<span class="price"><a href="###">停牌</a></span>					
+				</div>
+		     <div class="minute_price_ztdt fl">
+		            <p>涨停：<span class="red" id="tmaxprice">0</span>跌停：<span class="green" id="tminprice">0</span></p>
+		            <p id="timeshow" style="font-family: tahoma">timeshow</p>
+		        </div>
+	      </div>
+		<ul class="new_trading fl">
+	
+			<li>
+				<span class="jk">今开：<strong class="minus" id="topenprice">{{open_price}}</strong></span>
+				<span class="trading_w contract_amount">&nbsp;&nbsp;&nbsp;成交量：<strong id="tamount" class="plus">{{volume}}亿</strong></span>
+				<span class="trading_w zf">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;振幅：<strong id="trange" >--</strong></span>
+			</li>
+			<li>
+				<span class="zg">最高：<strong id="thighprice">{{high}}</strong></span>
+				<span class="trading_w trading_volume">&nbsp;&nbsp;&nbsp;成交额：<strong id="tamounttotal">{{amount}}亿</strong></span>
+				<span class="trading_w hs">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;换手：<strong id="tchange">--</strong></span>
+			</li>
+			<li>
+				<span class="zd">最低：<strong id="tlowprice">{{low}}</strong></span>
+				<span class="trading_w trading_volume">&nbsp;&nbsp;&nbsp;总市值：<strong id="tvalue">--</strong>亿</span>
+				<span class="trading_w sjl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;市净率：<strong id="tvaluep">--</strong></span>
+			</li>
+			<li>
+				<span class="zs">昨收：<strong id="pprice">{{pre_close}}</strong></span>
+				<span class="trading_w trading_volume">流通市值：<strong id="flowvalue">--</strong>亿</span>
+				<span class="trading_w syl">市盈率(动)：<strong id="fvaluep">--</strong></span>
+			</li>
+		</ul>
+	</div>
+
+<script>
+	window.onload=function () {
+	    // var tmp = Math.floor(Math.random()*(15-5)-5)
+	    var price = document.getElementById("hexm_float_price")
+        // price.textContent = tmp+"%"
+		s = price.textContent
+        ns = s.substring(0,s.length-1)
+        var mprice = document.getElementById("quote_header");
+        // div_1.textContent
+	    if (ns) {
+            if(ns>=0) {
+                mprice.style.color = '#C10D01'
+                mprice.style.backgroundPositionX = "125px"
+                mprice.style.backgroundPositionY = "-450px"
+            }else{
+                mprice.style.color = '#018101'
+                mprice.style.backgroundPositionX = "125px"
+                mprice.style.backgroundPositionY = "-390px"
+            }
+        }
+    }
+</script>
+
+</body></html>

@@ -1,0 +1,35 @@
+    <div class="m_content">
+        <div class="m_cont_0">
+            <ul class="m_title_0 m_title_1 tit">
+                <li id="newsleft_selfstock" class="tab_current">
+                    <a href="#" class="related_industry">
+                        我的自选股
+                    </a>
+                </li>
+            </ul>
+           <div class="sub_cont_0">
+		<table class="ri_table m_table_0" id="newsleft_selfstock_table">
+			<thead>
+				<tr>
+					<th>股票名称</th>
+					<th>最新价</th>
+					<th>涨跌幅</th>
+				</tr>
+			</thead>
+		<tbody>
+			{%for i in optional%}
+				<tr class="stat" stat="zxg_list">
+				<td>
+					<a href="/company/{{i.number}}/">{{i.company_name}}
+					</a>
+				</td>
+				<td class="minus">{{i.price}}</td>
+				<td class="minus">{{i.perce}}%</td>
+				</tr>
+			{%endfor%}
+			
+			</tbody>
+			</table>       
+                <span class="manage_stock stat"><a href="/account/">管理自选股</a></span>
+            </div>
+

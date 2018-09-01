@@ -1,0 +1,298 @@
+{%load staticfiles%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>金融网站</title>
+    <link rel="stylesheet" href="{%static 'css/main.css' %}">
+</head>
+<body>
+    <div id="header">
+        <div class="header_search">
+            <div class="logo">
+                <a href="http://bj.tedu.cn" class="logo_site">
+                    <img src="{%static 'images/logo.png' %}" alt="logo图" title="logo图">
+                </a>
+                <a class="logo_sub" href="#">实时行情</a>
+            </div>
+            <div class="search_box">
+            <form action="/company/0/" method="post">
+            {%csrf_token%}
+            <input type="text" name='number' value="输入股票/港股代码" class="search_input" id="search_input">
+            <input type="submit" value="搜索" class="search_btn">
+            </form>
+        </div>
+        </div>
+    </div>
+    <div class="line"></div>
+    <div class="interface">
+        <dl class="dl_first interface_0">
+            <dt><a href="#" target="_blank">数据中心</a></dt>
+            <dd><a href="#" target="_blank">龙虎榜</a></dd>
+            <dd><a href="#" target="_blank">大单追踪</a></dd>
+            <dd><a href="#" target="_blank">资金流向</a></dd>
+            <dd><a href="#" target="_blank">业务报告</a></dd>
+            <dd><a href="#" target="_blank">新股申购</a></dd>
+        </dl>
+        <dl>
+            <dt><a href="#" target="_blank">行情中心</a></dt>
+            <dd><a href="#" target="_blank">沪深市场</a></dd>
+            <dd><a href="#" target="_blank">香港市场</a></dd>
+            <dd><a href="#" target="_blank">美国市场</a></dd>
+            <dd><a href="#" target="_blank">全球市场</a></dd>
+            <dd><a href="#" target="_blank">行业风云</a></dd>
+        </dl>
+        <dl>
+            <dt><a href="#" target="_blank">全球市场</a></dt>
+        </dl>
+        <div class="sub_interface_1">
+            <span class="options_btn">
+            <!--     <a href="javascript:void(0)" class="options_up">向上</a>
+                <a href="javascript:void(0)" class="options_down">向下</a> -->
+            </span>
+            <ul style="margin-top:0;">
+                <li><a class="c_fill" href=""></a></li>
+                <li><a class="c_fill" href=""></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="m_header clearfix">
+        <h1 class="m_logo fl">
+            <a href="#"><strong>上证指数</strong>000001</a>
+        </h1>
+        <div class="new_detail fl">
+        <iframe width="660" height="115" src="realHead.html" frameborder="0" scrolling="no" marginheight="0" name="ifm"></iframe>
+    </div>
+    </div>
+        {%if is_login%}
+            {%include 'login_left.html'%}
+        {%else%}
+            {%include 'left.html'%}
+        {%endif%}
+
+      <!--   <div class="m_content">
+        {%for i in ad%}
+        <p><a href="{{i.callback_url}}">{{i.title}}</a></p>
+        {%endfor%}
+        </div> -->
+        {%include 'hot.html'%}
+        </div>
+        <div class="m_cont_2 fl">
+            <div class="m_cont_0">
+                <iframe src="k.html" width="580" height="565" scrolling="no" marginheight="0" marginwidth="0" frameborder="0"></iframe>
+            </div>
+        </div>
+        <div class="m_cont_1">
+            <ul class="m_title_0 m_title_1 tit">
+                <li id="newsright_stocknews" class="tab_current">
+                    <a href="#">
+                        成分股涨幅排行
+                    </a>
+                </li>
+            </ul>
+            <div class="sub_cont_1 fl">
+                <div id="index_stock">
+                    <table class="m_table">
+                        <thead>
+                        <tr>
+                            <th>股票名称</th>
+                            <th>最新价</th>
+                            <th>涨跌幅</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {%for i in rank%}
+                        <tr>
+                            <td><a href="/company/{{i.number}}/" target="_blank">{{i.company_name}}</a></td>
+                            <td class="upRed">{{i.price}}</td>
+                            <td class="upRed">{{i.perce}}%</td>
+                        </tr>
+                        {%endfor%}
+                       
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="sub_cont_3 fr zsph">
+                <h2 class="m_title_4">指数排行</h2>
+                <div class="aside_nav">
+                    <table>
+                        <tr>
+                            <td><a href="#" target="_blank">上证指数</a></td>
+                            <td class="tarup">3432.67(0.14%)</td>
+                        </tr>
+                        <tr class="even">
+                            <td><a href="#" target="_blank">Ｂ股指数</a></td>
+                            <td class="tarup">352.84(0.16%)</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#" target="_blank">深圳成指</a></td>
+                            <td class="tarup">11645.05(0.8%)</td>
+                        </tr>
+                        <tr class="even">
+                            <td><a href="#" target="_blank">创业板</a></td>
+                            <td class="tarup">1900.63(0.88%)</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#" target="_blank">成份Ｂ指</a></td>
+                            <td class="tarup">6959.29(0.51%))</td>
+                        </tr>
+                        <tr class="even">
+                            <td><a href="#" target="_blank">百发100</a></td>
+                            <td class="tarup">3432.67(0.14%)</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#" target="_blank">中国波指</a></td>
+                            <td class="tarup">11.43(5.25%)</td>
+                        </tr>
+                        <tr class="even">
+                            <td><a href="#" target="_blank">恒生指数</a></td>
+                            <td class="tardown">29120.92(-0.05%)</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div style="clear:both"></div>
+        <div class="m_cont_4">
+	        <div id="" class="main_cont_1">
+		    	<div class="sub_cont_5">
+			        <div class="m_title_4">
+			            <h2 class="fl">实时解盘</h2>
+			            <ul class="mt_list fr">
+			                <li stat="finance_more" class="stat">
+			                    <a target="_blank" href="http://stock.10jqka.com.cn/jiepan_list/">更多&gt;</a>
+			                </li>
+			            </ul>
+			        </div>
+			            <ul stat="gsxw" class="news_list stat">
+			 					<li><span class="news_title"><a target="_blank" href="http://stock.10jqka.com.cn/20171110/c601520714.shtml">晚间公告：韦尔股份停牌核查</a></span>
+                	                <span class="news_date"><em>11-10 21:00</em></span>
+            	                </li>
+            					<li>
+                	                <span class="news_title"><a target="_blank" href="http://stock.10jqka.com.cn/20171110/c601520516.shtml">5G概念股牛气冲天 但这几股更牛</a></span>
+                	                <span class="news_date"><em>11-10 20:05</em></span>
+            	                </li>
+            					<li>
+                	                <span class="news_title"><a target="_blank" href="http://stock.10jqka.com.cn/20171110/c601518913.shtml">每日异动股点评：今日四大牛股</a></span>
+                	                <span class="news_date"><em>11-10 19:30</em></span>
+            	                </li>
+            					<li>
+                	                <span class="news_title"><a target="_blank" href="http://stock.10jqka.com.cn/20171110/c601518140.shtml">龙虎榜：四机构砸盘雅克科技</a></span>
+                	                <span class="news_date"><em>11-10 19:14</em></span>
+            	                </li>
+            					<li>
+                	                <span class="news_title"><a target="_blank" href="http://stock.10jqka.com.cn/20171110/c601511552.shtml">机构论市：5连阳或预示新一波上涨</a></span>
+                	                <span class="news_date"><em>11-10 16:57</em></span>
+            	                </li>
+            	            </ul>
+		                </div>
+		    <div class="sub_cont_6">
+	            <div class="m_title_4">
+	                <h2 class="fl">要闻速递</h2>
+	                <ul class="mt_list fr">
+	                    <li stat="finance_more" class="stat">
+	                        <a target="_blank" href="#">更多&gt;</a>
+	                    </li>
+	                </ul>
+	            </div>
+			    <ul stat="gsgg" class="news_list stat">
+				    <li><span class="news_title"><a target="_blank" href="http://stock.10jqka.com.cn/usstock/20171111/c601522070.shtml">加拿大羽绒服公司被爆将鹅关进拥挤笼中虐待致死</a></span>
+                	    <span class="news_date"><em>11-11 16:51</em></span>
+            	    </li>
+                    <li>
+                	    <span class="news_title"><a target="_blank" href="http://stock.10jqka.com.cn/usstock/20171111/c601522069.shtml">迪士尼CEO：迪士尼流媒体服务将比Netflix更好 定价更低</a></span>
+                	    <span class="news_date"><em>11-11 16:46</em></span>
+            	    </li>
+            	    <li>
+                	    <span class="news_title"><a target="_blank" href="http://stock.10jqka.com.cn/usstock/20171111/c601522059.shtml">苹果为何避而不谈iPhone 8/8 Plus和iPhone X销售情况？</a></span>
+                	    <span class="news_date"><em>11-11 16:08</em></span>
+            	    </li>
+            	    <li>
+                	    <span class="news_title"><a target="_blank" href="http://stock.10jqka.com.cn/usstock/20171111/c601522043.shtml">双十一交易数据算法不同 京东徐雷回怼阿里王帅</a></span>
+                	    <span class="news_date"><em>11-11 15:40</em></span>
+            	    </li>
+            	    <li>
+                	    <span class="news_title"><a target="_blank" href="http://stock.10jqka.com.cn/usstock/20171111/c601522040.shtml">唯品会“11.11”包下高铁送包裹</a></span>
+                	    <span class="news_date"><em>11-11 15:35</em></span>
+            	    </li>
+            	    </ul>
+    	    </div>
+                <div style="clear:both"></div>
+		    	<div id="xwgg" class="sub_cont_5">
+	                <div class="m_title_4">
+	                    <h2 class="fl">公司研究</h2>
+	                    <ul class="mt_list fr">
+	                <li stat="finance_more" class="stat">
+	                    <a target="_blank" href="http://stock.10jqka.com.cn/gegudp_list/">更多&gt;</a>
+	                </li>
+	            </ul>
+	        </div>
+			<ul stat="gsxw" class="news_list stat">
+				            	<li>
+                	<span class="news_title"><a target="_blank" href="http://stock.10jqka.com.cn/20171111/c601521535.shtml">天汽模：战略入股时空能源 发展前景广阔</a></span>
+                	<span class="news_date"><em>11-11 07:24</em></span>
+            	</li>
+            	            	<li>
+                	<span class="news_title"><a target="_blank" href="http://stock.10jqka.com.cn/20171110/c601515466.shtml">11月10日晚间机构研报精选 10股值得关注</a></span>
+                	<span class="news_date"><em>11-10 18:20</em></span>
+            	</li>
+            	            	<li>
+                	<span class="news_title"><a target="_blank" href="http://stock.10jqka.com.cn/20171110/c601511840.shtml">银轮股份：进入大众供应体系 乘用车业务再上新台阶</a></span>
+                	<span class="news_date"><em>11-10 17:03</em></span>
+            	</li>
+            	            	<li>
+                	<span class="news_title"><a target="_blank" href="http://stock.10jqka.com.cn/20171110/c601511838.shtml">德展健康：阿乐评价进展顺利 有望迎来二次腾飞</a></span>
+                	<span class="news_date"><em>11-10 17:03</em></span>
+            	</li>
+            	            	<li>
+                	<span class="news_title"><a target="_blank" href="http://stock.10jqka.com.cn/20171110/c601510207.shtml">罗顿发展收购易库易将大幅提高上市公司盈利能力</a></span>
+                	<span class="news_date"><em>11-10 15:13</em></span>
+            	</li>
+            	            	<li>
+                	<span class="news_title"><a target="_blank" href="http://stock.10jqka.com.cn/20171110/c601509343.shtml">滨江集团：双龙头战略浮现 力争提前达到销售千亿目标</a></span>
+                	<span class="news_date"><em>11-10 14:58</em></span>
+            	</li>
+            		        </ul>
+	    </div>
+	    	    	    <div class="sub_cont_6">
+	        <div class="m_title_4">
+	            <h2 class="fl">行业研究</h2>
+	            <ul class="mt_list fr">
+	                <li stat="finance_more" class="stat">
+	                    <a target="_blank" href="http://stock.10jqka.com.cn/bkfy_list/">更多&gt;</a>
+	                </li>
+	            </ul>
+	        </div>
+	        <ul stat="gsgg" class="news_list stat">
+				            	<li>
+                	<span class="news_title"><a target="_blank" href="http://stock.10jqka.com.cn/20171111/c601521577.shtml">无线充电应用场景开始落地 三大主线分享产业链机会</a></span>
+                	<span class="news_date"><em>11-11 07:43</em></span>
+            	</li>
+            	            	<li>
+                	<span class="news_title"><a target="_blank" href="http://stock.10jqka.com.cn/20171111/c601521570.shtml">天然气景气度持续提升</a></span>
+                	<span class="news_date"><em>11-11 07:41</em></span>
+            	</li>
+            	            	<li>
+                	<span class="news_title"><a target="_blank" href="http://stock.10jqka.com.cn/20171111/c601521423.shtml">上市公司收购互金平台“爱”对赌 3家平台今年业绩达标无忧</a></span>
+                	<span class="news_date"><em>11-11 06:33</em></span>
+            	</li>
+            	            	<li>
+                	<span class="news_title"><a target="_blank" href="http://stock.10jqka.com.cn/20171110/c601506351.shtml">方正证券：2018年快递行业业务量增速预计为25%至35%</a></span>
+                	<span class="news_date"><em>11-10 13:45</em></span>
+            	</li>
+            	            	<li>
+                	<span class="news_title"><a target="_blank" href="http://stock.10jqka.com.cn/20171110/c601498623.shtml">满产仍供不应求  瓦楞纸或继续涨价</a></span>
+                	<span class="news_date"><em>11-10 06:47</em></span>
+            	</li>
+            	            	<li>
+                	<span class="news_title"><a target="_blank" href="http://stock.10jqka.com.cn/20171110/c601498060.shtml">中新互联互通南向通道进入常态化运行阶段</a></span>
+                	<span class="news_date"><em>11-10 00:05</em></span>
+            	</li>
+            		        </ul>
+	    </div>
+								<div style="clear:both"></div>
+			    	</div>
+</div></div>
+</body>
+</html>
