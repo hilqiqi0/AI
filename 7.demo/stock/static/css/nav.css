@@ -1,0 +1,1089 @@
+@charset "utf-8";
+/*base css start */
+body,h1,h2,h3,h4,h5,h6,p,dl,dt,dd,ul,ol,li,form,button,input,textarea,th,td{margin:0;padding:0}
+body,button,input,select,textarea{font:12px/1.5 \5b8b\4f53,tahoma,arial,sans-serif}
+h1,h2,h3,h4,h5,h6,button,input,select,textarea{font-size:100%;font-weight:normal;}
+table{ border-collapse:collapse;border-spacing:0;}
+caption,th{ text-align:left;}
+address,cite,dfn,var,em,strong,caption,th{font-style:normal;}
+ul,ol{list-style:none}
+img{border:none}
+em{font-style:normal}
+a{color:#333;text-decoration:none}
+a:hover{text-decoration:underline;color:#07519a;}
+select{height:22px;line-height:18px;padding:2px 0;margin:0}
+.clearfix{zoom:1}
+.clearfix:before,.clearfix:after{content:"";display:table}
+.clearfix:after{clear:both;overflow:hidden}
+.plus{color:#c00c00;}
+.minus{color:#008000;}
+.level{color:#07519a;}
+
+/*common*/
+.fl{ float:left;display:inline;}
+.fr{ float:right;display:inline;}
+.cb{ clear:both;}
+.hidden{display:none;}
+/*end base css*/
+
+/*common css start*/
+html, body{background:#fff;height:100%;width:100%;font:12px/2.03 \5b8b\4f53,tahoma,arial,\5FAE\8F6F\96C5\9ED1,sans-serif;color:#333333;}
+.m_logo, .interface dt, .interface_0, .sub_interface_1 .c_rise .icon_rise, .sub_interface_1 .c_fall .icon_fall, .options_up, .options_down, .self_select, .plus_price, .minute_price, .level_price, .new_column{
+	background:url(http://i.thsi.cn/images/stockpage/new/home_common2.png) no-repeat scroll 0 0 transparent;
+}
+
+.interface, .header_top, .detail_list, .line{
+	background:url(http://i.thsi.cn/images/stockpage/new/common_x.png) repeat-x scroll 0 0 transparent;
+}
+/*site_nav css start*/
+#site_nav{font:12px/1.5 \5B8B\4F53;width:1000px;}
+.header{width:1000px;margin:0 auto;}
+#site_nav .site_nav{background:url("http://i.thsi.cn/images/navigation/common_nav_bg.png") repeat-x scroll 0 0 transparent;border:1px solid #bdbcbd;height:30px;line-height:30px;padding-left:12px;}
+#site_nav .site_login{background-color:#eaeaea;border-left:1px solid #bdbdbd;color:#555555;float:right;font-family:\5B8B\4F53;overflow:hidden;text-align:center;width:150px;}
+#site_nav .site_login a{color:#000000;margin:0 10px;text-decoration:none;}
+#site_nav .site_login a:link, #site_nav .site_login a:visited{color:#555555;}
+#site_nav .site_login a:hover, #site_nav .site_login a:active{color:#CC3300;text-decoration:underline;}
+#site_nav .site_nav_links a{color:#000000;margin:0 5px;text-decoration:none;}
+.site_nav{background:url("http://i.thsi.cn/images/navigation/common_nav_bg.png") repeat-x scroll 0 0 transparent;border:1px solid #bdbdbd;height:30px;line-height:30px;padding-left:12px;}
+/*end site_nav css*/
+
+/*interface css start*/
+.interface{width:998px;margin:5px auto 0;border:1px solid #ddd;overflow:auto;zoom:1;background-position:0 -140px;}
+.interface dl{overflow:auto;zoom:1;border-bottom:1px solid #e6e6e6;}
+.interface dt{background-position:right -249px;width:84px;height:24px;line-height:24px;float:left;display:inline;text-align:center;font-weight:bold;}
+.interface dd{padding:0 13px;height:24px;line-height:24px;text-align:center;float:left;display:inline;}
+.interface .market_index{border-bottom:none;}
+.interface .market_index dd{padding:0;width:251px;text-align:left;float:left;display:inline;padding-left:20px;background:none;}
+.interface .market_index span{display:block;float:left;margin-right:2px;color:#333;}
+.interface .market_index em{font-family:tahoma;display:block;float:left;margin-right:13px;}
+.interface_0{float:left;width:49%;background-position:-298px -277px;}
+.interface .dl_first{background:none;}
+.interface_1 {clear:both;float:left;display:inline;width:84px;}
+.sub_interface_1{float:left;position:relative;width:874px;height:25px;overflow:hidden;line-height:25px;}
+.sub_interface_1 li{font-family:tahoma;height:25px;line-height:25px;}
+.sub_interface_1 em {color:#000000;}
+.sub_interface_1 img {height:12px;margin:0 12px 0 5px;vertical-align:middle;width: 8px;}
+.sub_interface_1 .c_rise .icon_rise{background-position:right -313px;}
+.sub_interface_1 .c_fall .icon_fall{background-position:right -336px;}
+.sub_interface_1 .c_rise {padding-left:12px;height:25px;line-height:25px;_height:19px;_line-height:19px;_padding-top:5px;overflow:hidden;zoom:1;float:left;color:#C00C00;}
+.sub_interface_1 .c_fall {padding-left:12px;height:25px;line-height:25px;_height:19px;_line-height:19px;_padding-top:5px;overflow:hidden;zoom:1;float:left;color:#008000;}
+.sub_interface_1 .options_btn{background:none;position:absolute;right:10px;top:0;padding:0;overflow:hidden;zoom:1;}
+.sub_interface_1 .options_btn a{float:left;width:15px;height:15px;text-indent:-9999px;margin:6px 0 0 5px;overflow:hidden;zoom:1;}
+.options_up{background-position:-118px -244px;}
+.options_down{background-position:-138px -244px;}
+/*end interface css*/
+
+
+/*header_top css start*/
+.header_top{background-position:0 1px;height:41px;border-left:1px solid #cccccc;border-right:1px solid #cccccc;width:958px;margin:0 auto;}
+.header_logo{background-position:0 0;width:122px;height:38px;text-indent:-9999px;margin-left:20px;}
+.home_logo{background-position:-122px 0;width:53px;height:38px;text-indent:-9999px;margin-left:8px;}
+.search_form .search_input{border:1px solid #9d9d9d;color:#999999;height:20px;line-height:20px;margin-top:8px;padding:0 5px;width:220px;}
+.search_form .search_btn{background-position:-175px 0;border:0 none;cursor:pointer;width:60px;height:22px;margin:8px 10px 0 4px;text-indent:-9999px;}
+/*end header_top css*/
+
+/*m_header css start*/
+.m_header{width:1000px;margin:5px auto 0;position:relative;font-family:tahoma;} 
+.m_logo{background-position:0 -262px;width:139px;height:107px;border:1px solid #dddddd;text-align:center;font:normal 24px/36px \5FAE\8F6F\96C5\9ED1;}
+.m_logo a:hover{text-decoration:none;color:#333333;}
+.m_logo strong{display:block;margin-top:15px;font-weight:normal;}
+.new_detail{background:#fafafa;width:818px;border-top:1px solid #dddddd;border-right:1px solid #dddddd;}
+
+.price{display:inline-block;float:left;overflow:hidden;zoom:1;width:100px;font-size:2.3em;font-weight:bold;line-height:71px;}
+.plus_price{background-position:125px -452px;color:#c00c00;margin-left:28px;width:215px}
+.minute_price{background-position:125px -390px;color:green;margin-left:28px;width:215px}
+.black_price{color:#000000;margin-left:28px;width:215px}
+.level_price{background-position:125px -503px;margin-left:28px;width:215px}
+.price_details{float:left;margin-top:8px;width:115px;height:62px;overflow:hidden;zoom:1;font-size:1.5em;}
+.price_details span{padding-left:38px;line-height:1.33;display:inline-block;float:left;}
+
+
+/**login**/
+.dialgo_box{background:url("http://i.thsi.cn/images/stockpage/new/dialgo.jpg") no-repeat scroll 0 0;height:220px;position:fixed;left:50%;margin-left:-175px;top:268px;_position:absolute;_top:expression(eval(document.documentElement.scrollTop)+268);z-index:10001;width:351px;z-index:9999;}
+.dialgo_box .dialgo_pos{color:#555555;font-weight:bold;padding:16px 0 0 48px;}
+.dialgo_box .dialgo_pos .dialgo_closed{background:url("http://i.thsi.cn/images/stockpage/new/button.png") no-repeat scroll -5px -227px transparent;cursor:pointer;display:inline-block;float:right;height:16px;padding-right:15px;vertical-align:top;width:16px;}
+.dialgo_box .dialgo_main{padding:34px 0 0 44px;}
+.dialgo_main a{color:#07237D;text-decoration:underline;}
+.dialgo_box .dialgo_login{background:url("http://i.thsi.cn/images/stockpage/new/button.png") no-repeat scroll -5px -158px transparent;border:none;cursor:pointer;height:28px;margin:16px 0 0 194px;width:73px;}
+.dialgo_box_tip{background:url("http://i.thsi.cn/images/stockpage/new/dialgo.jpg") no-repeat scroll 0 0 transparent;height:220px;position:absolute;width:351px;z-index:9999;}
+.dialgo_box_tip .dialgo_pos_tip{color:#555555;font-weight:bold;height:20px;padding:16px 0 0 48px;}
+.dialgo_box_tip .dialgo_pos_tip .dialgo_closed_tip{background:url("http://i.thsi.cn/images/stockpage/new/button.png") no-repeat scroll -5px -227px transparent;cursor:pointer;display:inline-block;float:right;height:16px;padding-right:15px;vertical-align:top;width:16px}
+.dialgo_box_tip .dialgo_main_tip{font-size:16px;font-weight:bold;height:97px;line-height:22px;padding:56px 0 0;text-align:center;}
+.dialgo_main_tip a{text-decoration:none;}
+.dialgo_box_tip .dialgo_login_tip{background:url("http://i.thsi.cn/images/stockpage/new/button.png") no-repeat scroll -5px -194px transparent;cursor:pointer;height:25px;margin:0 0 0 276px;width:70px;}
+
+.new_trading{margin:8px 0 0 12px;height:62px;color:#555;width:414px;}
+.new_trading li{height:24px;line-height:24px;overflow:hidden;float:left}
+.new_trading span{float:left;display:inline-block;overflow:hidden;zoom:1;width:95px;padding-right:5px;}
+.new_trading .trading_w{width:150px;}
+
+.self_select{background-position:0 0;width:115px;height:35px;display:inline-block;overflow:hidden;zoom:1;text-indent:-9999px;margin:15px 10px 0 0;}
+.detail_list{width:100%;background-position:0 -72px;height:37px;line-height:37px;}
+.detail_list li{float:left;display:inline;margin:0 20px 0 7px;}
+.detail_list .industry{margin-left:27px;}
+.detail_list .industry a{color:#07519a;margin-right:5px;}
+.detail_list .industry em{font-family:\5B8B\4F53;}
+.detail_list strong{font-weight:normal;}
+
+*html,*html body{background-attachment:fixed; background-image:url(about:blank);}
+.fix_menu{position:fixed;top:0;left:50%;margin-left:-480px;_position:absolute;_top:expression(eval(document.documentElement.scrollTop)+0);z-index:10000;}
+.menu{height:60px;margin:0 auto;width:1000px;clear:both;}
+.top_menu{width:1000px;margin:0 auto;overflow:hidden;zoom:1;}
+.nav_list{width:1000px;margin:0 auto;height:30px;line-height:30px;background:#287ab4;}
+.nav_list a{float:left;padding:0 14px;}
+.nav_list .home{margin-left:15px;}
+.nav_list a{color:#fff;}
+.nav_list a:hover{color:#fff;text-decoration:none;}
+.nav_list a:hover.nav_current{color:#07519a;text-decoration:none;}
+.nav_list .nav_current{background:#e6eefc;color:#07519a;}
+.sub_list{width:1000px;margin:0 auto;clear:both;height:25px;padding-top:5px;line-height:30px;clear:both;background:#e6eefc;}
+.sub_list .sl_first{padding-left:8px;}
+.sub_list li{float:left;}
+.sub_list a{float:left;zoom:1;padding:0 10px;height:20px;line-height:20px;text-align:center;color:#555;}
+.sub_list a:hover{color:#fff;background:#287ab4;text-decoration:none;}
+.sub_current{border-bottom:1px solid #4188b9;height:29px;}
+.sub_current a{color:#4188b9;}
+/*end m_header css*/
+
+/* footer css */
+#footer{border-top:1px solid #777;clear:both;overflow:hidden;padding-top:10px;text-align:center;font-size:12px;line-height:24px;width:1000px;margin:10px auto;font-family:tahoma,arial;}
+#footer p{margin:0;}
+#footer p.c333{color:#333;}
+#footer span{color:#999999;padding:0 10px;}
+#footer a{line-height:24px;color:#000;text-decoration:none;}
+#footer a:hover{color:#CC3300;text-decoration:none;}
+.line{background-position:0 -37px;height:3px;width:1000px;margin:0 auto;zoom:1;clear:both;overflow:hidden;}
+/*right_ad*/
+/*
+* @name: fixed_side
+* @description: fixed_side
+*/
+.fixedbar_qq, .fixedbar_btn, .fixedbar_contact_detail dt, .fixedbar_contact_detail dd{ background-image:url(http://i.thsi.cn/images/newdata/fixedbar.png);background-repeat:no-repeat;}
+.fixedbar{position:fixed;width:40px;height:160px;bottom:150px;left:50%;margin-left:481px;
+	_position:absolute;
+	_bottom:auto;
+	_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)) - 150);
+}
+.fixedbar li{float:left;width:40px;position:relative;}
+.fixedbar_qq{display:block;height:36px;background-position:5px 0;}
+.fixedbar_btn{display:block;margin-top:1px;height:28px;border-width:1px;border-style:solid;border-color:#e3e3e3 #ddd #ddd #e5e5e5;background-color:#e6e6e6;text-indent:-9999px;}
+.fixedbar_btn:hover{background-color:#ccc;}
+.fixedbar_tel span{color:#07519a;}
+.fixedbar_toggle{position:relative;}
+.fixedbar_totop{background-position:9px -40px;}
+.fixedbar_feedback{background-position:9px -71px;}
+.fixedbar_contact{background-position:9px -98px;}
+.fixedbar_activity{background-position:9px -127px;}
+.fixedbar_totop:hover{background-position:2px -301px;}
+.fixedbar_feedback:hover{background-position:3px -325px;}
+.fixedbar_contact_hover{background-position:2px -349px;background-color:#ccc}
+.fixedbar_activity:hover{background-position:3px -374px;}
+.fixedbar_contact_detail{display:none;position:absolute;top:1px;right:-140px;width:138px;border-width:1px;border-style:solid;border-color:#c6c6c6 #bbb #bbb #bbb;background-color:#fff;}
+.fixedbar_inner{right:41px;}
+.fixedbar_contact_detail dt{height:29px;text-align:center;font:16px/29px 'Microsoft Yahei';color:#555;background-color:#ccc;background-position:9px -156px;}
+.fixedbar_contact_detail dd{padding:3px 0 3px 27px;line-height:20px;border-bottom:1px dotted #ddd;}
+.fixedbar_email{background-position:2px -178px;}
+.fixedbar_tel{background-position:2px -217px;}
+.fixedbar_weibo{background-position:2px -257px;}
+
+/*uservoet*/
+.research_box_0{position:fixed;left:50%;margin-left:-374px;top:105px;_position:absolute;_top:expression(eval(document.documentElement.scrollTop)+165);z-index:1000;}
+.research_box_1{position:fixed;left:50%;margin-left:-374px;bottom:95px;_bottom:125px;_position:absolute;_top:expression(eval(document.documentElement.scrollTop)-115);z-index:1000;}
+.research_box_2{position:fixed;left:50%;margin-left:-374px;top:50%;margin-top:-250px;_position:absolute;_top:expression(eval(document.documentElement.scrollTop)+300);z-index:1000;}
+
+
+
+.feedback{background:url(" http://i.thsi.cn/images/stockpage/new/feedback.png") no-repeat scroll 0 0 transparent;bottom:158px;height:73px;left:50%;line-height:20px;margin-left:261px;padding:38px 20px 0 70px;position:fixed;width:133px;z-index:999;}
+.feedback a{color:#2690DA;float:right;right:20px;text-decoration:underline;}
+/* add 0808 */
+.price_box_wide .minute_price, .price_box_wide .plus_price, .price_box_wide .level_price{width: 230px;padding-left: 10px;}
+.price_box_wide .price{width: 115px;}
+
+
+@charset "utf-8";
+.m_cont_3{margin-left:-1000px;}
+.m_content{width:1000px;overflow:hidden}@charset "utf-8";
+#sns_nav .sns_nav{ border-bottom: 1px solid #ccc;}
+.m_header{margin-top:10px;height:119px;}
+.m_logo{height:117px;}
+.self_select{background-image:url(http://s.thsi.cn/css/stockpage/s2015/addbut.png);height:35px;margin-right:9px;}
+.minute_price,.plus_price,.level_price{margin-left:25px;border-right:1px solid #ddd;margin-left: 0px;padding-left:25px;}
+.price{height:63px;}
+.price_details{height:55px;}
+.new_detail{height: 117px;border-bottom: 1px solid #ddd;width:668px;}
+.price_box{height:117px;border-right:1px solid #ddd;}
+.minute_price_ztdt{height:54px;width:240px;}
+.minute_price_ztdt p{color:#555;font-size:12px;line-height:27px;padding-left:14px;border-top:1px dotted #ccc;}
+.minute_price_ztdt p span{margin-right:19px;}
+.red{color:#c00c00;}
+.green{color:#008000;}
+.new_trading{margin-top: 0px;height: 109px;padding-top:8px;}
+.new_trading li{width:414px;}
+.ad04{background-color:#fafafa;border:1px solid #ddd;margin-left:10px;margin-top:0px;height:117px;width:178px;}
+.adxxdl{margin-top: 40px;}
+.interface{margin:0px auto 15px;}
+.sub_interface_2{width:534px;float:left;position:relative;height:25px;overflow:hidden;line-height:25px;}
+.sub_interface_2 li{font-family:tahoma;height:25px;line-height:25px;}
+.sub_interface_3 em {color:#000000;}
+.sub_interface_2 img {height:12px;margin:0 12px 0 5px;vertical-align:middle;width: 8px;}
+.sub_interface_2 .c_rise .icon_rise{background-position:right -313px;}
+.sub_interface_2 .c_fall .icon_fall{background-position:right -336px;}
+.sub_interface_2 .c_rise {padding-left:12px;height:25px;line-height:25px;_height:19px;_line-height:19px;_padding-top:5px;overflow:hidden;zoom:1;float:left;color:#C00C00;}
+.sub_interface_2 .c_fall {padding-left:12px;height:25px;line-height:25px;_height:19px;_line-height:19px;_padding-top:5px;overflow:hidden;zoom:1;float:left;color:#008000;}
+.sub_interface_2 .options_btn{background:none;position:absolute;right:10px;top:0;padding:0;overflow:hidden;zoom:1;}
+.sub_interface_2 .options_btn a{float:left;width:15px;height:15px;text-indent:-9999px;margin:6px 0 0 5px;overflow:hidden;zoom:1;}
+.interface_2{width:618px;}
+.company_details{height:408px;overflow:hidden;color:#333;font-size:12px;}
+.company_details dd{color:#333;line-height: 24px;}
+.company_details a{float:right;color:#333;margin-bottom:10px;}
+.gray{color:#333;}
+.red{color:#c00c00;}
+.green{color:#008000;}
+.clear_list{background:url(http://i.thsi.cn/images/stockpage/new/home_common.png) no-repeat scroll 0 0 transparent;}
+.clear_list{background-position:right -46px;display:inline-block;zoom:1;height:24px;line-height:24px;position:absolute;bottom:8px;right:10px;font-family:\5B8B\4F53;}
+.clear_list a{background-position:-297px -22px;padding:0 10px;display:inline-block;zoom:1;}
+.clear_list a:hover{text-decoration:none;}
+.djdzs-menu li{padding: 46px 17px;}
+.bd{padding:15px 9px;}
+.wdmask{width:772px;height:80px;padding:10px 9px;}
+.wdmaskbox{width:720px;height:78px;border:1px solid #6ea8e1;}
+.wdmaskbox form textarea{width:595px;height:57px;font-size:12px;color:#777;padding:10px;resize: none;border:0px;outline: none;}
+.askbut{float:right;width:104px;height:78px;border-left:1px solid #ebebeb;}
+.askbut p{text-align:center;font-size:12px;color:#777;line-height:26px;}
+.askbut p img{margin:0 4px -2px 0;}
+.askbut a{width:65px;height:42px;display:block;font-family:Microsoft YaHei;font-size:18px;text-decoration:none;margin:0px auto;text-align:center;}
+.askbut a:link{color:#555;background-color:#fafafa;border:1px solid #ddd;}
+.askbut a:visited{color:#555;background-color:#fafafa;border:1px solid #ddd;}
+.askbut a:hover{color:#fff;background-color:#6ea8e1;border:1px solid #6ea8e1;}
+.askbut a:active{color:#555;background-color:#fafafa;border:1px solid #ddd;}
+.s_box .s_box_con{width:693px;height:185px;border-top:1px solid #ddd;border-bottom:1px solid #ddd;margin-bottom:10px;overflow-y:scroll;overflow-x:hidden;}
+.qusetion{background-color:#fff;padding:8px 0;}
+.qusetion p{float:left;line-height:25px;}
+.qusetion .p1{width:78px;text-align:center;color:#333;}
+.qusetion .p2{margin-left:10px;color:#6ea8e1;}
+.qusetion .p3{color:#555;width:544px;}
+.pnone{width:100%;height:1px;clear:both;}
+.answer{background-color:#eff6fb;padding:8px 0;}
+.answer p{float:left;line-height:25px;}
+.answer .p1{width:78px;text-align:center;color:#333;}
+.answer .p2{margin-left:10px;color:#6ea8e1;}
+.answer .p3{color:#555;width:544px;}
+.answer .p3 span{color:#999;font-family:Tahoma;margin-left:37px;}
+.wencai{width:178px;height:142px;border:1px solid #ddd;border-top:2px solid #4999d0;margin-top:10px;}
+.wencai_title{height:39px;width:178px;border-bottom:1px solid #ddd;background-image:url(http://s.thsi.cn/css/stockpage/s2015/wencaiback.png);}
+.wencai_title a{float:right;color:#555;line-height:39px;}
+.wencai_title a img{margin:0 5px;}
+.wencai_title span{color:#333;font-family:Microsoft YaHei;font-size:16px;float:right;line-height:39px;margin-right:10px;}
+.wencai_list{width:168px;height:91px;margin:6px;}
+.wencai_list span{float:left; width:76px;height:36px;color:#555;font-size:16px;font-family:Microsoft YaHei;text-align:center;line-height:36px;margin:4px 0 0px 4px;}
+.wencaipink span{background-color:#ffd3d3;border:1px solid #ffa9aa;}
+.wencaigreen span{background-color:#c0fcc0;border:1px solid #5fc460;}
+.sub_cont_5, .sub_cont_6{width:404px;}
+#chartContent_sscjfb{float: left;height: 260px;margin: 0 10px 0 20px;width: 290px;z-index: 2;}
+.profile{margin:8px 0 0 8px;}
+.profile span{margin-right:15px;}
+.pie_legend{position:relative;top:41px;left:-25px;clear:right;}
+.cont_list_1 li.list_head{padding-left: 59px;}
+.cont_list_0 li{border: 1px solid #dddddd;height: 24px;overflow: auto;margin-top:0px;border-top:0px;}
+.cont_list_0{margin: 0 10px 10px;text-align: center;width: 385px;}
+.cont_list_1 .li_data span{display: block;float: left;font-weight: normal;text-align: center;width: 25%;}
+.cont_list_1 li.list_head span{display: inline;padding: 0 18px 0 53px;}
+.zilxlstj { width: 100%; height: 368px; position:relative;}
+.zilxlstj .chart_content_lstj { height: 50% }
+.zilxlstj h2 { font-size: 13px; font-weight: 600; margin: 10px 0 0 6px }
+.zilxlstj .content_box{ width: 100%; height: 100% }
+.zilxlstj span { display: inline-block }
+.zilxlstj .legend { width: 40px; text-align: center; font-size: 13px; font-weight: 600; position: absolute }
+.zilxlstj ul { margin-top: 6px }
+.zilxlstj ul li { height: 35px; line-height: 40px; *margin-top: -2px;}
+.zilxlstj .up, .zilxlstj .down { height: 40px; width: 60px; position: absolute }
+.zilxlstj .up { left: 50px; border-right: 1px solid black }
+.zilxlstj .down { left: 111px }
+.zilxlstj .up_content, .zilxlstj .down_content { height: 20px; position: absolute; top: 50%; margin-top: -10px }
+.zilxlstj .up_content { background: rgb( 193, 12, 1 ); right: 0; *right: -1px; }
+.zilxlstj .down_content { background: rgb( 0, 128, 1 ) }
+.zilxlstj .tip { height: 20px; border: 1px solid #b3b3b3; line-height: 20px; padding: 0 5px 0 5px; display: none; text-align: center;position:absolute;}
+.zilxlstj .arrow { top: 6px }
+.left_tip .arrow { left: -6px ;position:absolute;}
+.right_tip .arrow { right: -6px;position:absolute; }
+.zilxlstj .big_tip { *margin-top: 10px }
+.abs{position: absolute;}
+.pre{position: relative;}
+.right_float {bottom: 50px;_top: expression(eval(document.documentElement.scrollTop + 400)); display: inline;float: left;left: 530px;margin-left: 50%;margin-top: 100px;}
+.right_float a{width:40px;height:30px;display: block;text-decoration:none;}
+.wc a:link,.wc a:visited,.wc a:active{background-image: url("http://s.thsi.cn/css/stockpage/s2015/wencai1.png");}
+.wc a:hover{background-image: url("http://s.thsi.cn/css/stockpage/s2015/wencai2.png");}
+.dm a:link,.dm a:visited,.dm a:active{background-image: url("http://s.thsi.cn/css/stockpage/s2015/dongmi1.png");}
+.dm a:hover{background-image: url("http://s.thsi.cn/css/stockpage/s2015/dongmi2.png");}
+.jy a:link,.jy a:visited,.jy a:active{background-image: url("http://s.thsi.cn/css/stockpage/s2015/jianyi1.png");}
+.jy a:hover{background-image: url("http://s.thsi.cn/css/stockpage/s2015/jianyi2.png");}
+.fhdb a:link,.fhdb a:visited,.fhdb a:active{background-image: url("http://s.thsi.cn/css/stockpage/s2015/fanhui1.png");}
+.fhdb a:hover{background-image: url("http://s.thsi.cn/css/stockpage/s2015/fanhui2.png");}
+.fix{position: fixed;_position:absolute;}
+.right_float li{margin-top:10px;}
+.m_cont_2{width:620px;}
+.company_details a.jyfx{
+    float: none;
+    color: #07519A;
+}
+.sub_cont_6{
+    width: 403px;
+    border-left: 1px solid #ddd;
+    /*padding-bottom: 10px;*/
+}
+.cont_sscjfb{
+    padding: 0 10px;
+    height: 200px;
+}
+.cont_sscjfb .cont_txt{
+    float: left;
+    width: 180px;
+    margin-top: 50px;
+}
+.cont_sscjfb .cont_txt p{
+    line-height: 16px;
+    padding: 12px 0;
+    font-weight: bold;
+    color: #333;
+}
+.cont_sscjfb p.notips{
+    text-align: center;
+    padding-top: 88px;
+}
+.cont_sscjfb .cont_txt i{
+    font-style: normal;
+    font-weight: normal;
+}
+.cred{
+    color: #de0101;
+}
+.cgreen{
+    color: #408800;
+}
+.table_sscjfb{
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #d7d7d7;
+    line-height: 30px;
+}
+.table_sscjfb th{
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+}
+.table_sscjfb td{
+    font-size: 14px;
+    border-top: 1px solid #d7d7d7;
+    border-right: 1px solid #d7d7d7;
+}
+.rdarkred{
+    background: #b11c1e;
+}
+.rred{
+    background: #ca4e50;
+}
+.rlightred{
+    background: #dd7677;
+}
+.rdarkgreen{
+    background: #507214;
+}
+.rgreen{
+    background: #71a020;
+}
+.rlightgreen{
+    background: #b5c467;
+}
+.table_sscjfb td span{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-left: 8px;
+}
+.zjlxlstj_txt{
+    padding: 4px 30px 0 30px;
+    line-height: 22px;
+    font-size: 14px;
+    color: #333;
+}
+.zjlxlstj_txt i{
+    font-style: normal;
+}
+.zjlxlstj_chart{
+    height: 228px;
+}
+.mt4{
+    margin-top: 4px;
+}
+.mb10{
+    margin-bottom: 10px;
+}
+.mb14{
+    margin-bottom: 14px;
+}
+
+
+
+.m_cont_1{
+    margin-left: 0;
+    float: right;
+}
+.m_title_4{
+    line-height: 37px;
+    background: url(http://s.thsi.cn/css/stockpage/s2015/m_title_bg.png) no-repeat;
+    overflow: hidden;
+}
+.m_title_4 .moreinfo{
+    float: right;
+    line-height: 40px;
+    color: #555;
+    font-size: 12px;
+    font-family: \5B8B\4F53;
+    padding: 0 12px;
+}
+.table_lr{
+    width: 100%;
+}
+.table_lr th,.table_lr td{
+    font-weight: normal;
+    font-size: 12px;
+    color: #333;
+    padding: 0 2px;
+    text-align: center;
+    line-height: 24px;
+}
+.none{
+    display: none;
+}
+.m_title_5{
+    background-position: 0 0;
+    height: 40px;
+    line-height: 31px;
+    _line-height: 35px;
+    font-size: 1.33em;
+    font-family: \5FAE\8F6F\96C5\9ED1;
+}
+.m_title_5{
+    background:url(http://s.thsi.cn/css/stockpage/s2015/m_title_bg.png) no-repeat scroll 0 -112px transparent;
+}
+.m_title_5 h2{
+    height: 31px;
+    line-height: 31px;
+    width: 130px;
+    padding-bottom: 8px;
+    cursor: pointer;
+}
+.m_title_5 .m_title_arrow{
+    width: 8px;
+    height: 14px;
+    margin-right: 6px;
+    display: inline-block;
+    background:url(m_title_arrow.jpg) no-repeat;
+}
+.m_title_5 .m_title_arrow, .m_title_5 .m_title_arrow span {
+    vertical-align: middle;
+    position: relative;
+}
+.tab-bd{padding:15px 9px 0 9px;}
+.tab-1{
+    padding-left: 8px;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    border-color: #4b98ce;
+}
+.tab-1.cur{
+    border-color: #d8e9f2;
+}
+.tab-2{
+    text-align: center;
+    border-color: #4b98ce;
+    border-style: solid;
+    border-width: 0 1px 1px 1px;
+}
+.tab-2.cur{
+    border-color: #4b98ce #4b98ce #d8e9f2 #4b98ce;
+}
+
+.table-guba{
+    width: 100%;
+}
+.table-guba th,.table-guba td{
+    text-align: center;
+    text-align: center;
+    font-size: 12px;
+    line-height: 33px;
+    padding: 0 12px;
+}
+.table-guba th{
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+}
+.table-guba td{
+    border-left: 1px solid #f0f5f8;
+    border-right: 1px solid #f0f5f8;
+}
+.table-guba tr.bgblue td{
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+}
+.table-guba .table-tit{
+    background: #3c84e8;
+    color: #fff;
+}
+.table-guba a{
+    color: #0050b8;
+}
+.icon-gg,.icon-xw{
+    position: relative;
+    top: 6px;
+    display: inline-block;
+    width: 37px;
+    height: 19px;
+    margin-right: 8px;
+}
+.icon-gg{
+    background: url(http://s.thsi.cn/css/stockpage/s2015/icon-gg.png) no-repeat;
+}
+.icon-xw{
+    background: url(http://s.thsi.cn/css/stockpage/s2015/icon-xw.png) no-repeat;
+}
+.bgblue{
+    background: #f0f5f8;
+}
+.table-link{
+    text-align: right;
+
+}
+.table-link a{
+    line-height: 33px;
+    color: #0050b8;
+}
+
+/* analyze-result */
+.analyze-result{
+    width: 470px;
+    padding: 6px 22px 15px 0;
+    border-right: 1px solid #ddd;
+}
+.analyze-img{
+    width: 177px;
+    height: 145px;
+    background: url(http://s.thsi.cn/css/stockpage/s2015/analyze-img.jpg) no-repeat;
+    margin: 15px 0 0 15px;
+    padding-top: 32px;
+    color: #fff;
+}
+.analyze-img .analyze-num{
+    display: block;
+    font-size: 72px;
+    line-height: 74px;
+    text-align: center;
+}
+.analyze-img .analyze-tips{
+    display: block;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+}
+.mt7{
+    margin-top: 7px;
+}
+.analyze-txt{
+    width: 262px;
+    padding-top: 9px;
+    position: relative;
+    line-height: 16px;
+}
+.analyze-txt  .analyze-txt-cont{
+    padding-bottom: 5px;
+}
+.analyze-txt .txt-aside {
+    width: 60px;
+    float: left;
+    color: #666;
+}
+.analyze-txt .txt-main {
+    overflow: hidden;
+    color: #c00c00;
+}
+.txt-phra{
+    color: #666;
+    border-top: 1px solid #ededed;
+    padding-top: 9px;
+}
+.analyze-level{
+    width: 294px;
+    padding-top: 30px;
+}
+.analyze-level .analyze-stars{
+    position: relative;
+    line-height: 20px;
+    height: 20px;
+    color: #666;
+    margin-bottom: 15px;
+}
+.analyze-stars span,.analyze-stars i{
+    display: inline-block;
+    margin-right: 7px;
+}
+.analyze-stars i{
+    font-style: normal;
+}
+.stars-blank{
+    width: 115px;
+    height: 20px;
+    background: url(http://s.thsi.cn/css/stockpage/s2015/stars-blank.jpg) no-repeat;
+}
+.stars{
+    position: absolute;
+    top: 0;
+    left: 98px;
+    height: 20px;
+    background: url(http://s.thsi.cn/css/stockpage/s2015/stars-blank.jpg) 0 -20px no-repeat;
+}
+.stars-5{
+    width: 115px;
+}
+.stars-4h{
+    width: 106px;
+}
+.stars-4{
+    width: 91px;
+}
+.stars-3h{
+    width: 82px;
+}
+.stars-3{
+    width: 67px;
+}
+.stars-2h{
+    width: 58px;
+}
+.stars-2{
+    width: 43px;
+}
+.stars-1h{
+    width: 34px;
+}
+.stars-1{
+    width: 19px;
+}
+.stars-0h{
+    width: 10px;
+}
+.stars-0{
+    width: 0px;
+}
+
+/* jg-cont */
+.jg-cont{
+    height: 353px;
+    overflow: hidden;
+    padding: 3px 0 20px 0;
+}
+.jg-tips{
+    padding-left: 8px;
+    line-height: 28px;
+    height: 28px;
+    background: #ebebeb;
+}
+.jg-level{
+    position: relative;
+    height: 57px;
+    padding-top: 33px;
+}
+.jg-level .jg-level-img{
+    width: 337px;
+    height: 34px;
+    margin: 0 auto;
+    background: url(http://s.thsi.cn/css/stockpage/s2015/jg-level.jpg) no-repeat;
+}
+.jg-level .jg-levelcursor{
+    position: absolute;
+    top: 62px;
+    display: inline-block;
+    width: 18px;
+    height: 22px;
+    background: url(http://s.thsi.cn/css/stockpage/s2015/cursor.png) no-repeat;
+}
+.jg-level .jg-level-0{
+    background: none;
+}
+.jg-level .jg-level-1{
+    left: 60px;
+}
+.jg-level .jg-level-2{
+    left: 123px;
+}
+.jg-level .jg-level-3{
+    left: 190px;
+}
+.jg-level .jg-level-4{
+    left: 260px;
+}
+.jg-level .jg-level-5{
+    left: 332px;
+}
+.jg-info{
+    padding: 0 9px;
+}
+.table-jg{
+    width: 100%;
+    border-top: 1px solid #ddd;
+
+}
+.table-jg th, .table-jg td{
+    line-height: 32px;
+    text-align: center;
+}
+.table-jg .table-tit th{
+    line-height: 42px;
+}
+#forecastFlash{
+    margin-top: 10px;
+    padding: 0 10px;
+    height: 315px;
+}
+.charts-lr{
+    height: 143px;
+    _height:160px;
+}
+.charts-lr p{
+    line-height: 20px;
+    padding-right: 10px;
+    text-align: right;
+}
+.news_list{
+
+}
+.news_list li{
+    line-height: 27px;
+    vertical-align: bottom;
+    height: 27px;
+    zoom:1;
+    overflow: hidden;
+}
+.ad-right{
+    display: inline-block;
+    float: right;
+}
+
+/* data-nav */
+.data-nav .data-nav-l{
+    float: left;
+    width: 485px;
+    border-right: 1px solid #ccc;
+}
+.data-nav .data-nav-links{
+    display: inline-block;
+    margin-right: 22px;
+    height: 24px;
+    line-height: 24px;
+}
+.data-nav .data-nav-linkhead{
+    background: url(http://i.thsi.cn/images/stockpage/new/home_common2.png) no-repeat scroll right -249px transparent;
+    width: 84px;
+    float: left;
+    display: inline;
+    text-align: center;
+    font-weight: bold;
+    margin-right: 12px;
+}
+/* adplace*/
+.adplace{
+
+}
+.ad1{
+    width:1000px;height: 60px;margin: 10px auto;
+}
+.ad2{
+    width:1000px;height: 90px;margin: 7px auto;
+}
+.ad2-1{
+    width: 175px;height:90px;float: left;margin-right: 7px;
+}
+.ad2-2{
+    width: 636px;height:90px;float: left;
+}
+.ad2-3{
+    width: 175px;height:90px;float: right;
+}
+.ad3{
+    float: right;width: 178px;height: 112px;border: 1px solid #ddd;padding-top:5px;
+}
+.ad3 li{  color: #c00c00;height: 27px;line-height: 27px;padding-left: 28px;}
+.ad4{
+    height: 70px;margin-top: 10px;
+}
+.ad5{
+    height: 338px;margin-top: 10px;
+}
+.ad6{
+    height: 80px;margin-top: 10px;
+}
+.ad7{
+    width: 180px;height: 355px;margin-top: 10px;overflow:hidden;background: #000;
+    position: absolute;
+}
+.fixedAd7{position: fixed;top: 60px;_position: absolute;_top:expression(eval(documentElement.scrollTop + 60));}
+.ad8{
+    padding-left: 5px;
+    height: 21px;
+    line-height: 21px;
+    border-top: 1px solid #ddd;
+}
+.ad8 a{
+    color: #c00c00;
+}
+.ad_left{_top:expression(eval(documentElement.scrollTop + 50));}
+.ad_right{_top:expression(eval(documentElement.scrollTop + 50));}
+
+.ri_table .odd,.table-jg .odd{
+    background: #f7f7f7;
+}
+
+.bordert{border-top: 1px solid #ddd;}
+
+.ting{background: none;}
+.ting .price{width:120px;text-align: right;}
+.ting .price a{color: #c00c00;}
+
+
+.hSty1, .hSty2{ height: 367px !important;}
+.hSty2 .zjlxlstj_txt{ padding-top: 2px;}
+.hSty3{height: 272px !important;}
+.hSty4{height: 218px !important;}
+@charset "gb2312";
+/*common*/
+.w950 {width:950px; margin-left:auto; margin-right:auto;text-align:left;padding:0;margin-top:0;}
+.w960 {width:1000px; margin-left:auto; margin-right:auto;text-align:left;padding:0;margin-top:0;}
+.w1000 {width:1000px;margin-left:auto; margin-right:auto;text-align:left;padding:0;margin-top:0;}
+#hd{font:12px/1.5 \5b8b\4f53;}
+#site_nav{font:12px/1.5 \5b8b\4f53;}
+
+/*site_nav*/
+#site_nav .site_nav {height:30px; line-height:30px; background:url(http://i.thsi.cn/images/navigation/common_nav_bg.png) repeat-x; border:1px solid #BDBDBD; padding-left:12px;border-bottom:0;}
+#site_nav .site_login {float:right; border-left:1px solid #BDBDBD; background-color:#eaeaea; text-align:center; width:150px; color:#555;font-family: 'SimSun';overflow: hidden;}
+#site_nav .site_login a {margin:0 10px; color:#555;text-decoration:none;color:#000000;}
+#site_nav .site_login a:link, #site_nav .site_login a:visited {color:#555;}
+#site_nav .site_login a:hover, #site_nav .site_login a:active {color:#cc3300; text-decoration:underline;}
+#site_nav .site_nav_links a {margin:0 4px;text-decoration:none;color:#000000;}
+
+/*site_nav*/
+#hd .site_nav {height:30px; line-height:30px; background:url(http://i.thsi.cn/images/navigation/common_nav_bg.png) repeat-x; border:1px solid #BDBDBD; padding-left:12px;}
+#hd .site_login {float:right; border-left:1px solid #BDBDBD; background-color:#eaeaea; text-align:center; width:150px; color:#555;font-family: 'SimSun';overflow: hidden;}
+#hd .site_login a {margin:0 10px; color:#555;text-decoration:none;color:#000000;}
+#hd .site_login a:link, #hd .site_login a:visited {color:#555;}
+#hd .site_login a:hover, #hd .site_login a:active {color:#cc3300; text-decoration:underline;}
+#hd .site_nav_links a {margin:0 4px;text-decoration:none;color:#000000;}
+
+/*header_search*/
+#hd .header_search {height:38px; background:#f3f3f3; border:1px solid #ccc; position:relative;z-index:999}
+#hd h1{float:left;width:130px;}
+#hd .logo {padding:5px 0 0 20px; float:left;}
+#hd .hdlogo {float: left;padding: 5px 0 0 20px;width:250px;}
+#hd .search_box {float:right;}
+#hd .search_box .search_input {border: 1px solid #999999; color: #999999; height: 20px;line-height: 20px; margin-top:8px; padding: 0 5px; width: 210px;float:left;}
+#hd .search_box .search_btn {background-position:0 -178px; background-color:transparent; border:none; cursor: pointer; height: 22px; margin: 8px 10px 0 0; text-indent: -9999px; width: 60px;}
+#hd .site_logo{float:left;width:115px;height:29px;}
+#hd .sub_logo{float:left;height:29px;font:29px/1 \9ED1\4F53;margin-left:8px;text-decoration:none;color:#000;padding-top:2px\9;}
+#hd .sub_logo:hover{color:#000;text-decoration:none;}
+
+#hd .autocomplete {background:#fff; width:220px; border:1px solid #999; border-top:1px solid #bdbdbd; position:absolute; right:76px; top:30px; color:#333;}
+#hd .autocomplete dt, #hd .autocomplete dd {height:22px; line-height:22px;font-family:'SimSun';margin-bottom:0px;}
+#hd .autocomplete dt {background:#f0f0f0; padding-left:5px; border-bottom:1px solid #e8e8e8;}
+#hd .autocomplete dd {padding-left:18px;cursor: pointer;overflow:hidden;}
+#hd .autocomplete dd span {margin-right:20px;}
+#hd .autocomplete dd.selected {background:#fff3d8;}
+#hd .autocomplete dl {cursor: pointer;}
+#hd .autocomplete dt.selected {background:#cfcfcf;}
+
+.autocomplete {background:#fff; border:1px solid #999; border-top:1px solid #bdbdbd; position:absolute; color:#333;}
+.autocomplete dt,.autocomplete dd {height:22px; line-height:22px;font-family:'SimSun';margin-bottom:0px;}
+.autocomplete dt {background:#f0f0f0; padding-left:5px; border-bottom:1px solid #e8e8e8;}
+.autocomplete dd {padding-left:18px;cursor: pointer;overflow:hidden;}
+.autocomplete dd span {margin-right:20px;}
+.autocomplete dd.selected {background:#fff3d8;}
+.autocomplete dl {cursor: pointer;}
+.autocomplete dt.selected {background:#cfcfcf;}
+.autocomplete dt strong {color:#cc3300;}
+
+#hd .header_search_login {float:left; margin:18px 0 0 25px;}
+#hd .header_search_login a {color:#555;}
+#hd .header_search_login a:link, #hd .header_search_login a:visited {color:#555;}
+#hd .header_search_login a:hover, #hd .header_search_login a:active {color:#cc3300; text-decoration:underline;}
+
+#hd .crumbs{float:left;margin:11px 0 0 10px;line-height:1.5;}
+#hd .crumbs a, #hd .crumbs span{margin:0;}
+
+/*channel_nav*/
+#hd .channel_nav {height:51px; padding:8px 0 0 0; background-position:0 -82px;}
+#hd .chnnel_col {float:left;}
+#hd .chnnel_col strong {height:46px; float:left; font-weight:bold; width:14px; font-size:14px; color:#f5f5f5; background-position:0 -82px; padding:0 8px; line-height:20px; margin-left:20px; }
+#hd .chnnel_col a {margin:0 4px 0 10px; line-height:20px; color:#f5f5f5;}
+#hd .chnnel_col a:link{color:#f5f5f5; text-decoration:none;}
+#hd .chnnel_col a:visited {color:#f5f5f5; text-decoration:none;}
+#hd .chnnel_col a:hover, #hd .chnnel_col a:active{color:#f5f5f5;text-decoration:underline;}
+
+/*assisted_nav*/
+#hd .assisted_nav {height:25px; line-height:25px; background-color:#eaeaea; background-position:-249px -144px;}
+#hd .assisted_nav dl {float:right; color:#777; background-position:right -144px; padding-right:10px;}
+#hd .assisted_nav dl dt, #hd .assisted_nav dl dd {float:left;}
+#hd .assisted_nav dl dt {margin-left:25px; font-weight:bold;}
+#hd .assisted_nav dl dd {margin-left:12px;}
+#hd .assisted_nav dl dd a {color:#777;}
+#hd .assisted_nav dl dd a:link, #hd .assisted_nav dl dd a:visited {color:#777;}
+#hd .assisted_nav dl dd a:hover, #hd .assisted_nav dl dd a:active {text-decoration:underline;}
+
+/*inner_nav*/
+#hd .inner_nav {height:38px; line-height:38px; background-position:0 -40px;}
+#hd .inner_nav li {float:left; display:inline; padding-left:2px; background-position:0 -43px;}
+#hd .inner_nav li.no_bg {background:none;}
+#hd .inner_nav li a {display:block; line-height:38px; padding:0 14px; color:#f5f5f5; text-decoration:none;}
+#hd .inner_nav li a:link, #hd .inner_nav li a:visited {color:#f5f5f5;}
+#hd .inner_nav li a:hover {background-position:0 0; text-decoration:none;}
+#hd .inner_nav li a:active {background-position:0 -145px;  text-decoration:none;}
+#hd .inner_nav .inner_nav_title {position:relative; top:-2px; margin-left:10px; text-align:center; padding-left:0; color:#f5f5f5; font-weight:bold; font-size:14px;z-index:1000;}
+#hd .inner_nav .char2 {width:66px; background-position:0 0;}
+#hd .inner_nav .char3 {width:80px; background-position:-71px 0;}
+#hd .inner_nav .char4 {width:95px; background-position:-155px 0;}
+
+/*banner*/
+#hd .banner{margin:1px 0;}
+
+#hd .bbn {border-bottom:none;}
+#hd .pl10{padding-left:10px;}
+#site_nav .pl10{padding-left:10px;}
+
+/*sns_nav*/
+#sns_nav{font:12px/1.5 \5b8b\4f53; position: relative; z-index:9999; }
+#sns_nav .sns_nav {height:30px; line-height:30px; background:url(http://i.thsi.cn/images/navigation/common_nav_bg.png) repeat-x; border:1px solid #BDBDBD; padding-left:8px;position: relative; z-index:9999; }
+#sns_nav .sns_login_not a{margin: 0 10px; color:#555;text-decoration:none;}
+#sns_nav .sns_login_not a:link, #sns_nav .sns_login_not a:visnsd {color:#555;}
+#sns_nav .sns_login_not a:hover, #sns_nav .sns_login_not a:active {color:#cc3300; text-decoration:underline;}
+#sns_nav .sns_login {float:right; border-left:1px solid #BDBDBD; background-color:#eaeaea; text-align:left;  width:163px; color:#555;font-family: \5b8b\4f53; }
+
+#sns_nav .sns_login_not{text-align: center;}
+#sns_nav .sns_login .sns_login_inner{padding: 0 5px; height: 30px; text-align: center; position: relative; z-index: 9999; zoom:1; font-size:0; *word-spacing:-1px; }
+
+#sns_nav .sns_nav_links a {margin:0 4px;text-decoration:none;color:#000;}
+
+#sns_nav .sns_login a.sns_msgnum{background: #dc3d3d; position: relative; color: #fff;  font-family: Arial; line-height: 16px; line-height: 17px\0\9; width: 16px; height: 16px;  text-align: center;   vertical-align: middle; margin-top: -7px; *margin-top: -2px; _margin: 7px 0;  }
+#sns_nav .sns_dib{ display: inline-block; *display: inline; zoom:1; font-size: 12px; letter-spacing: normal; word-spacing: normal; /*vertical-align:top;*/ *vertical-align: middle;  }
+@media screen and (-webkit-min-device-pixel-ratio:0){
+/* firefox 中 letter-spacing 会导致脱离普通流的元素水平位移 */
+/* Safari 等不支持字体大小为 0 的浏览器, N 根据父级字体调节*/
+	#sns_nav .sns_login .sns_login_inner{letter-spacing:-7px;}
+}
+#sns_nav .sns_login a.sns_msgnum:hover{text-decoration: none; color: #fff;}
+#sns_nav a{text-decoration: none;}
+#sns_nav .c_login{ color:#555;}
+#sns_nav .sns_msgnum_arrow{border-style:solid; position:absolute; width:0; height:0; overflow:hidden; border-color:#eaeaea #dc3d3d; border-width:4px 4px 4px 0; top:50%; margin-top: -4px; left:-4px;}
+#sns_nav .sns_username{  color:#555;  max-width: 84px; _width: expression(this.clientWidth >= 84 ? "84px" : "auto"); overflow: hidden; text-align: center; vertical-align: middle;  word-break: break-all; word-wrap: break-word; height: 24px; line-height: 24px; margin:-6px 5px 0 0; *margin: 0 5px 0 0 }
+#sns_nav .sns_drop{position: absolute; right: -1px; top: 28px; font-size: 12px; width: 210px; background: #fff; z-index: 9999; text-align: center; display: none; border:1px solid #bdbdbd; letter-spacing: normal; word-spacing: normal;}
+#sns_nav .sns_drop_inner{ padding: 15px 5px 5px;}
+#sns_nav .sns_drop_close{position: absolute; top: 5px; right: 8px; font-family: Arial; color: #666; font-size: 9px; line-height: 9px; font-weight: 400; cursor: pointer;  -webkit-text-size-adjust:none;}
+#sns_nav .sns_drop_bd{padding: 15px 5px 5px; list-style:none; }
+#sns_nav .sns_drop_item {line-height: 24px;}
+#sns_nav .sns_drop_item a{color: #333; display: block; zoom:1; text-align:left; color: #656565; border:1px solid #fff; padding: 0 3px; }
+#sns_nav .sns_drop_item span{color: #0765a5; float: right;}
+#sns_nav .sns_drop_item a:hover{text-decoration: none; background: #ebf5fe; border: 1px solid #9ec8d9;}
+#sns_nav .sns_drop_item b{color: #9b1517; font-family: arial; font-weight: 400;}
+#sns_nav .sns_login_inner .boundary{margin:0 4px;}
+#sns_nav .sns_drop_ft{background: #eaeaea; height: 28px; line-height: 28px; text-align: center; color: #0664a4; }
+#sns_nav .sns_drop_ft a{ color: #0664a4;}@CHARSET "UTF-8";
+.tzzhd .aside_nav {padding-right: 10px;}
+.tzzhd .hd-con span{color: #07519a;}
+.tzzhd .hd-con {height:122px;overflow: hidden;}
+.tzzhd-more {display: block; width: 130px; height: 24px; color: #fff; text-align: center; line-height: 24px; background: url("http://i.thsi.cn/images/stockpage/new/append/tzzhd.png") no-repeat; margin: 0 auto;}
+.tzzhd-more:hover {color: #fff; text-decoration: none;}
+.fixedbar_askdm {width: 39px; height: 53px; background: url("http://i.thsi.cn/images/stockpage/new/append/askdm.png") no-repeat; display: block; margin-bottom: 3px;}
+.tzzhd .m_title_4 {position: relative;}
+.tzzhd-new {background: url("http://i.thsi.cn/images/stockpage/new/append/tzzhd-new.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);height: 9px;left: 105px;position: absolute;top: 5px;width: 22px;}
+.strack_phone {background: url(http://i.thsi.cn/images/stockpage/ad_hq.jpg) 0 0 no-repeat;clear: both;display: block;width: 170px;height: 35px;line-height: 35px;text-align: center;overflow: hidden;zoom: 1;text-indent: -9999px;cursor: pointer;position: absolute;left: 5px;bottom: 5px;}
+/*--.picking_device{width:80px;left:8px;bottom:46px;}--*/
+/*--.manage_stock{width:80px;right:8px;bottom:46px;}--*/
+.ad01,.ad01 img{width: 1000px; height: 60px; margin: 0 auto;}
+.ad02 {width: 1000px; height: 80px; margin: 0 auto;}
+.ad02-01{width: 180px; height: 80px;float:left;}
+.ad02-02{width: 600px; height: 80px;float:left;}
+.ad02-03{width: 180px; height: 80px;float:left;}
+.ad03 {font-size:14px;position:absolute;left:310px;top:10px;width:320px;height:22px;overflow: hidden; text-align: center;}
+.self_select {width:111px;height: 25px; margin: 0; background: url(http://i.thsi.cn/images/stockpage/add-btn.png) no-repeat;}
+.m_logo strong {margin-top: 2px; line-height: 42px;}
+.ad04 {width: 178px; height: 117px; border-left: 1px solid #ddd;}
+.ad04 span {width: 105px; height: 22px; display: block; color: #004e85; overflow: hidden; margin: 6px 0 0 15px;}
+.ad05 {width: 181px; height: 300px; margin-top: 5px;}
+.ad06 {width: 181px; height: 150px; margin-top: 5px;}
+.ad07 {width: 1000px; height: 80px; margin: 0 auto; clear: both; margin-top: 10px;}
+.ad07 img{width: 1000px; height: 80px;}
+.ad08 {width: 180px; height: 228px; margin-top: 10px;}
+.ad08 img{width: 180px; height: 228px;}
+.ad09 {border-top: 1px solid #ddd; padding-left: 5px; overflow: hidden;width:173px;height:21px;}
+.tzzhd {width: 178px; clear: none; margin-top: 13px;}
+.gsjj {clear: none;}
+.gsjj-table {width: 100%; height: 178px;}
+.gsjj-table td {border: 1px solid #ddd; padding-left: 15px; line-height: 32px; border-right: none;}
+.gsjj-table tr:first-child td {border-top: none;}
+/*.gsjj-table td:first-child {border-left: none;}*/
+.gsjj-table .lastTr td {border-bottom: none;}
+/*.gsjj-table .lastTd {border-right: none;}*/
+.ad10-big {width: 300px; height: 200px; position: fixed; right: 10px; bottom: 0;}
+.ad10-ad{width: 300px; height: 200px;}
+.ad10-close {width: 18px; height: 18px; background: url(http://i.thsi.cn/images/stockpage/ad-close.png) no-repeat; position: absolute; top: -9px; right: -9px;}
+.ad10-small {z-index:10;width: 26px; height: 100px; position: fixed; right: 0; bottom: 0px;}
+a.ad10-small{z-index:20;opacity:0;}
+.adxxdl{height: 22px;width: 80px;overflow: hidden;position: absolute;right: 1px;text-indent: -9999px;top: 0;z-index: 3;}
+.ad_x1{width:40px;right:45px;height: 40px;}
+.ad_x2{width:40px;height: 40px;}
+.ad_left {left: 3px;position: fixed;text-align: center;top: 50px;z-index: 999;_position:absolute;_top:expression(eval(documentElement.scrollTop + 50));}
+.ad_right {position: fixed;right: 3px;text-align: center;top: 50px;z-index: 999;_position:absolute;_top:expression(eval(documentElement.scrollTop + 50));}
+.none{display:none;}
+
+/*2014-08-22 start*/
+.menu{margin-top: 10px;}
+.news_list a,.news_date{height: 27px;}
+.sub_cont_5, .sub_cont_6{height: auto;}
+.main_cont_2{width:1000px; height:120px; margin-top:10px;}
+.footer_ad_1, .footer_ad_2, .footer_ad_3, .footer_ad_4{float:left; height:120px;background: #000000}
+.footer_ad_1{ width:250px;}
+.footer_ad_2{ width:250px;}
+.footer_ad_3{ width:250px;}
+.footer_ad_4{ width:250px;}
+.fl_ad{width:310px; height:40px; line-height:40px; font-size:14px; margin-left:250px; overflow:hidden;}
+.ad-text-lf{height:22px;width:272px;font-size:14px;overflow:hidden;float:right;text-align:center;margin:10px 0 0 150px;}
+.ad-fix-left{height:220px;left:3px;position:fixed;top:450px;width:116px;}
+.m_header {height: 119px;}
+.ten_flow_holder{color:#777;font-family:"宋体",serif;font-size:12px;line-height:35px;margin:2px 10px 0 0;}
+.soft-down-ad{background: url(http://i.thsi.cn/images/ad/soft-down.jpg) no-repeat 0 0;display:block;height: 220px;left: 3px;position: fixed;bottom: 20px;width: 116px;_position:absolute;_top:expression(eval(documentElement.scrollTop + 50));}
+.soft-down-item{display: block;height:34px;margin-top:3px;}
+.ad041{height:37px;width:80px; background:url(http://i.thsi.cn/images/stockpage/new/common_x.png) repeat-x scroll 0 -72px;}
+.ad041 span {display:block;height:22px;margin-top:6px;overflow: hidden;width:80px;}
+/*2014-08-22 end*/
+/*2014-09-09 */
+.mt_btn {margin-top: 2px; margin-right: 10px;}
+.mt_btn a {width: 66px;height: 23px; display: inline-block; *display: inline; *zoom: 1; text-align: center; color: #fff; line-height: 23px; background: url("http://i.thsi.cn/images/stockpage/sys-bg.png") no-repeat; font-size: 12px;}
+.mt_btn a:hover {text-decoration: none;}
+.s_box .s_box_con {padding:0px; height: 185px; position: relative;}
+.sns-item {position: relative; padding: 13px 20px 14px 0; width: 340px; float: left; color: #666; height: 50px;border-bottom: 0px dotted #ddd;}
+.sns-avatar {width: 50px; height: 50px; margin-right: 10px;}
+.sns-say {width: 280px;}
+.sns-name {color: #07519a;}
+.sns-time {position: absolute; bottom: 14px; right: 20px;}
+.sns-words:hover {color: #666;}
+/*2014-09-09  end*/
+
+.rec-pop{z-index:100000;position: fixed; margin: 0; bottom: 0; right: 0; width: 412px; overflow: hidden; font-family: "Microsoft yahei"; font-size: 18px; box-shadow: 0 1px 4px 0 #a0a0a0;}
+.rec-pop .min, .rec-pop .close{cursor: pointer; width: 20px; height: 40px; float: right; margin-right: 13px; background: url(http://s.thsi.cn/css/stockpage/s2015/rec-pop.png) no-repeat 0 0;}
+.rec-pop .min{background-position: 0 19px;}
+.rec-pop .close{background-position: 0 -34px;}
+.rec-pop-hd a{color: #fff; }
+.rec-pop-hd a:hover{color: #fff; }
+.rec-pop-hd{height: 40px; line-height: 40px; color: #f2f2f2; font-size: 20px; background: #287ab4; padding-left: 20px;}
+.rec-pop-main{height:370px;background:#fff}
+.rec-pop-main .push-list{padding: 0 25px; box-shadow: 0 1px 4px 0 #a0a0a0; overflow: hidden;}
+.rec-pop-main .push-list li{height: 45px; line-height: 45px; overflow: hidden; border-top: 1px solid #d3d3d3; margin-top: -1px;}
+.rec-pop-icon{font-size: 12px; background: #c32010; color: #fff; padding: 0 2px; border-radius: 2px; margin-right: 5px;}
+.rec-list{margin: 12px;}
+.rec-list li{height: 35px; line-height: 35px; overflow: hidden; font-size: 14px; margin: 10px 0; box-shadow: 0 1px 4px 0 #a0a0a0;}
+.rec-list li strong{font-size: 18px; width: 76px; text-align: center; color: #287ab4; padding: 0 12px; float: left; font-weight: 400; background: #e3ecf5; margin-right: 14px;}
